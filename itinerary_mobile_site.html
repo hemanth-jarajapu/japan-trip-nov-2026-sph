@@ -956,11 +956,6 @@
   @keyframes fadeInTab { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
 
-  .dm-mob-btn {
-    font-size: 1rem;
-    padding: 4px 8px;
-    min-width: 36px;
-  }
   body.dark-mode .mobile-bottom-nav {
     background: #14172a;
     border-top-color: #2e3248;
@@ -3580,7 +3575,6 @@
 <div class="mobile-bottom-nav" id="mobileBottomNav">
 <button class="mnav-btn" id="mnavPrev" onclick="prevSection()">‹ Prev</button>
 <span class="mnav-indicator" id="mnavIndicator">Section 1 of 21</span>
-<button class="mnav-btn dm-mob-btn" id="dmToggleMobile" onclick="toggleDarkMode()" title="Toggle dark/light mode">🌙</button>
 <button class="mnav-btn" id="mnavNext" onclick="nextSection()">Next ›</button>
 </div>
 </div><!-- end main-area -->
@@ -3589,8 +3583,8 @@
   const navOrder = [
     'must-dos','before-departure',
     'day1','day2','day3','day4','day5','day6','day7','day8','day9','day10',
-    'priority-tiers','contingency','trip-rules','shopping','energy',
-    'transport','food-guide','etiquette','tickets','photos','emergency','language'
+    'priority-tiers','contingency','trip-rules','language','shopping','energy',
+    'transport','food-guide','etiquette','tickets','photos','emergency'
   ];
   let currentSection = 'must-dos';
   const totalSections = navOrder.length;
@@ -3774,8 +3768,6 @@
     const btn  = document.getElementById('dmToggleBtn');
     const isDark = body.classList.toggle('dark-mode');
     if (btn) btn.textContent = isDark ? '☀️' : '🌙';
-    const mBtn = document.getElementById('dmToggleMobile');
-    if (mBtn) mBtn.textContent = isDark ? '☀️' : '🌙';
     localStorage.setItem('darkMode', isDark ? '1' : '0');
   }
   // Restore dark mode preference on load
@@ -3785,8 +3777,6 @@
       document.body.classList.add('dark-mode');
       const btn = document.getElementById('dmToggleBtn');
       if (btn) btn.textContent = '☀️';
-      const mBtn = document.getElementById('dmToggleMobile');
-      if (mBtn) mBtn.textContent = '☀️';
     }
   })();
 
