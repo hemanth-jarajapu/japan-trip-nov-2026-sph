@@ -358,7 +358,12 @@
   .sidebar-nav a.active { background: #e8f0fe; color: var(--navy); border-left-color: var(--red); font-weight: 600; }
   .sidebar-nav a .nav-icon { font-size: 1rem; flex-shrink: 0; }
   .sidebar-nav a .nav-label { transition: opacity .2s; overflow: hidden; text-overflow: ellipsis; }
+  .sidebar-nav a .nav-label-wrap { display: flex; flex-direction: column; overflow: hidden; transition: opacity .2s; line-height: 1.35; }
+  .sidebar-nav a .nav-label-wrap .nav-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .sidebar-nav a .nav-date { font-size: .7rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 400; }
+  .sidebar-nav a.active .nav-date { color: var(--navy2); }
   .sidebar.collapsed .sidebar-nav a .nav-label { opacity: 0; width: 0; }
+  .sidebar.collapsed .sidebar-nav a .nav-label-wrap { opacity: 0; width: 0; }
   .sidebar.collapsed .sidebar-nav a { padding: 8px 0; justify-content: center; }
   .nav-hidden { display: none !important; }
 
@@ -829,6 +834,7 @@
     .sidebar.collapsed .sidebar-progress { opacity: 1; pointer-events: auto; height: auto; padding: inherit; }
     .sidebar.collapsed .sidebar-nav a { padding: 12px 16px; justify-content: flex-start; }
     .sidebar.collapsed .sidebar-nav a .nav-label { opacity: 1; width: auto; }
+    .sidebar.collapsed .sidebar-nav a .nav-label-wrap { opacity: 1; width: auto; }
 
     .toggle-btn { display: none; }
     .sidebar-close-btn {
@@ -1025,16 +1031,16 @@
 <a data-label="⭐ Must-Dos" href="#must-dos" onclick="navigateTo('must-dos',this)"><span class="nav-icon">⭐</span><span class="nav-label">Must-Dos</span></a>
 <a data-label="📋 Preparation" href="#before-departure" onclick="navigateTo('before-departure',this)"><span class="nav-icon">📋</span><span class="nav-label">Preparation</span></a>
 <div class="nav-group-label">Day-by-Day</div>
-<a data-label="Day 1 – Depart" href="#day1" onclick="navigateTo('day1',this)"><span class="nav-icon">✈️</span><span class="nav-label">Day 1 – Depart</span></a>
-<a data-label="Day 2 – Arrival" href="#day2" onclick="navigateTo('day2',this)"><span class="nav-icon">🛬</span><span class="nav-label">Day 2 – Arrival</span></a>
-<a data-label="Day 3 – Fushimi" href="#day3" onclick="navigateTo('day3',this)"><span class="nav-icon">⛩</span><span class="nav-label">Day 3 – Fushimi</span></a>
-<a data-label="Day 4 – Arashiyama" href="#day4" onclick="navigateTo('day4',this)"><span class="nav-icon">🎋</span><span class="nav-label">Day 4 – Arashiyama</span></a>
-<a data-label="Day 5 – Transfer" href="#day5" onclick="navigateTo('day5',this)"><span class="nav-icon">🚄</span><span class="nav-label">Day 5 – Transfer</span></a>
-<a data-label="Day 6 – Kamakura" href="#day6" onclick="navigateTo('day6',this)"><span class="nav-icon">🏯</span><span class="nav-label">Day 6 – Kamakura</span></a>
-<a data-label="Day 7 – Mt. Fuji" href="#day7" onclick="navigateTo('day7',this)"><span class="nav-icon">🗻</span><span class="nav-label">Day 7 – Mt. Fuji</span></a>
-<a data-label="Day 8 – Harry Potter" href="#day8" onclick="navigateTo('day8',this)"><span class="nav-icon">⚡</span><span class="nav-label">Day 8 – Harry Potter</span></a>
-<a data-label="Day 9 – teamLab" href="#day9" onclick="navigateTo('day9',this)"><span class="nav-icon">🎨</span><span class="nav-label">Day 9 – teamLab</span></a>
-<a data-label="Day 10 – Departure" href="#day10" onclick="navigateTo('day10',this)"><span class="nav-icon">🏠</span><span class="nav-label">Day 10 – Depart</span></a>
+<a data-label="Day 1 – Depart Tue 17 Nov" href="#day1" onclick="navigateTo('day1',this)"><span class="nav-icon">✈️</span><span class="nav-label-wrap"><span class="nav-label">Day 1 – Depart</span><span class="nav-date">(Tue) 17 Nov</span></span></a>
+<a data-label="Day 2 – Arrival Wed 18 Nov" href="#day2" onclick="navigateTo('day2',this)"><span class="nav-icon">🛬</span><span class="nav-label-wrap"><span class="nav-label">Day 2 – Arrival</span><span class="nav-date">(Wed) 18 Nov</span></span></a>
+<a data-label="Day 3 – Fushimi Thu 19 Nov" href="#day3" onclick="navigateTo('day3',this)"><span class="nav-icon">⛩</span><span class="nav-label-wrap"><span class="nav-label">Day 3 – Fushimi</span><span class="nav-date">(Thu) 19 Nov</span></span></a>
+<a data-label="Day 4 – Arashiyama Fri 20 Nov" href="#day4" onclick="navigateTo('day4',this)"><span class="nav-icon">🎋</span><span class="nav-label-wrap"><span class="nav-label">Day 4 – Arashiyama</span><span class="nav-date">(Fri) 20 Nov</span></span></a>
+<a data-label="Day 5 – Transfer Sat 21 Nov" href="#day5" onclick="navigateTo('day5',this)"><span class="nav-icon">🚄</span><span class="nav-label-wrap"><span class="nav-label">Day 5 – Transfer</span><span class="nav-date">(Sat) 21 Nov</span></span></a>
+<a data-label="Day 6 – Kamakura Sun 22 Nov" href="#day6" onclick="navigateTo('day6',this)"><span class="nav-icon">🏯</span><span class="nav-label-wrap"><span class="nav-label">Day 6 – Kamakura</span><span class="nav-date">(Sun) 22 Nov</span></span></a>
+<a data-label="Day 7 – Mt. Fuji Mon 23 Nov" href="#day7" onclick="navigateTo('day7',this)"><span class="nav-icon">🗻</span><span class="nav-label-wrap"><span class="nav-label">Day 7 – Mt. Fuji</span><span class="nav-date">(Mon) 23 Nov</span></span></a>
+<a data-label="Day 8 – Harry Potter Tue 24 Nov" href="#day8" onclick="navigateTo('day8',this)"><span class="nav-icon">⚡</span><span class="nav-label-wrap"><span class="nav-label">Day 8 – Harry Potter</span><span class="nav-date">(Tue) 24 Nov</span></span></a>
+<a data-label="Day 9 – teamLab Wed 25 Nov" href="#day9" onclick="navigateTo('day9',this)"><span class="nav-icon">🎨</span><span class="nav-label-wrap"><span class="nav-label">Day 9 – teamLab</span><span class="nav-date">(Wed) 25 Nov</span></span></a>
+<a data-label="Day 10 – Departure Thu 26 Nov" href="#day10" onclick="navigateTo('day10',this)"><span class="nav-icon">🏠</span><span class="nav-label-wrap"><span class="nav-label">Day 10 – Depart</span><span class="nav-date">(Thu) 26 Nov</span></span></a>
 <div class="nav-group-label">Reference</div>
 <a data-label="🏆 Priority Tiers" href="#priority-tiers" onclick="navigateTo('priority-tiers',this)"><span class="nav-icon">🏆</span><span class="nav-label">Priority Tiers</span></a>
 <a data-label="🌦 Contingency" href="#contingency" onclick="navigateTo('contingency',this)"><span class="nav-icon">🌦</span><span class="nav-label">Contingency</span></a>
