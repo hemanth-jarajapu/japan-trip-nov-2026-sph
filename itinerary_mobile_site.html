@@ -1009,6 +1009,82 @@
   }
 
   
+
+  /* ── PHOTO GALLERY ── */
+  details.photo-gallery {
+    margin: 20px 0 8px 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--card2);
+  }
+  details.photo-gallery summary {
+    cursor: pointer;
+    padding: 10px 16px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--navy2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+    list-style: none;
+    background: var(--card2);
+    border-bottom: 1px solid transparent;
+    transition: background 0.2s;
+  }
+  details.photo-gallery summary::-webkit-details-marker { display: none; }
+  details.photo-gallery summary::after {
+    content: "▸";
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: var(--muted);
+    transition: transform 0.2s;
+  }
+  details.photo-gallery[open] summary {
+    border-bottom-color: var(--border);
+    background: var(--card);
+  }
+  details.photo-gallery[open] summary::after { transform: rotate(90deg); }
+  details.photo-gallery summary:hover { background: var(--tag-bg); }
+  .pg-icon { font-size: 1rem; }
+  .pg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+    padding: 14px;
+    background: var(--card2);
+  }
+  .pg-item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
+  .pg-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+  .pg-label {
+    font-size: 0.72rem;
+    text-align: center;
+    padding: 4px 6px;
+    color: var(--muted);
+    font-weight: 500;
+    background: var(--card);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* Dark mode overrides - inherited via CSS vars, but keep summary color warm */
+  body.dark-mode details.photo-gallery summary { color: var(--gold); }
+  @media (max-width: 480px) {
+    .pg-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; padding: 10px; }
+  }
 </style>
 </head>
 <body>
@@ -1352,6 +1428,24 @@
 </ul>
 </div>
 <div class="info-box box-success" style="margin-top:10px;"><span class="icon">✅</span><div><strong>Day 2 Success:</strong> Reach Kyoto, eat properly, enjoy a short Gion walk, and sleep early.</div></div>
+
+<details class="photo-gallery">
+  <summary><span class="pg-icon">📸</span> Photo Reference — Day 2 – Gion & Arrival</summary>
+  <div class="pg-grid">
+        <div class="pg-item">
+          <img src="assets/photos/day02-kyoto-arrival/gion.jpg" alt="Gion District" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Gion District</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day02-kyoto-arrival/yasaka.jpg" alt="Yasaka Shrine" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Yasaka Shrine</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day02-kyoto-arrival/pontocho.jpg" alt="Pontocho Alley" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Pontocho Alley</div>
+        </div>
+  </div>
+</details>
 </div>
 </div>
 <div class="section-footer"><p>Japan Trip 2026  ·  <strong>Hemanth Kumar Jarajapu</strong>  ·  17–26 November 2026</p><p style="margin-top:5px;">⚠️ Verify train times, attraction hours, and ticket availability 1–3 days before travel.</p></div>
@@ -1508,6 +1602,32 @@
 </ul>
 </div>
 <div class="info-box box-success"><span class="icon">✅</span><div><strong>Day 3 Success:</strong> End the day feeling like Kyoto is magical, not like you survived a marathon.</div></div>
+
+<details class="photo-gallery">
+  <summary><span class="pg-icon">📸</span> Photo Reference — Day 3 – Kyoto Temples</summary>
+  <div class="pg-grid">
+        <div class="pg-item">
+          <img src="assets/photos/day03-kyoto-temples/fushimi-inari.jpg" alt="Fushimi Inari" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Fushimi Inari</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day03-kyoto-temples/tofuji.jpg" alt="Tofuku-ji" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Tofuku-ji</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day03-kyoto-temples/kiyomizudera.jpg" alt="Kiyomizu-dera" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Kiyomizu-dera</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day03-kyoto-temples/higashiyama.jpg" alt="Higashiyama" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Higashiyama</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day03-kyoto-temples/kodaiji.jpg" alt="Kodai-ji" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Kodai-ji</div>
+        </div>
+  </div>
+</details>
 </div>
 </div>
 <div class="section-footer"><p>Japan Trip 2026  ·  <strong>Hemanth Kumar Jarajapu</strong>  ·  17–26 November 2026</p><p style="margin-top:5px;">⚠️ Verify train times, attraction hours, and ticket availability 1–3 days before travel.</p></div>
@@ -1631,6 +1751,24 @@
 </ul>
 </div>
 <div class="info-box box-success"><span class="icon">✅</span><div><strong>Day 4 Success:</strong> A calm, scenic autumn day without overloading temples.</div></div>
+
+<details class="photo-gallery">
+  <summary><span class="pg-icon">📸</span> Photo Reference — Day 4 – Arashiyama & Eikando</summary>
+  <div class="pg-grid">
+        <div class="pg-item">
+          <img src="assets/photos/day04-arashiyama-eikando/arashiyama.jpg" alt="Arashiyama" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Arashiyama</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day04-arashiyama-eikando/tenryuji.jpg" alt="Tenryu-ji" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Tenryu-ji</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day04-arashiyama-eikando/eikando.jpg" alt="Eikando" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Eikando</div>
+        </div>
+  </div>
+</details>
 </div>
 </div>
 <div class="section-footer"><p>Japan Trip 2026  ·  <strong>Hemanth Kumar Jarajapu</strong>  ·  17–26 November 2026</p><p style="margin-top:5px;">⚠️ Verify train times, attraction hours, and ticket availability 1–3 days before travel.</p></div>
@@ -1742,6 +1880,24 @@
 </ul>
 </div>
 <div class="info-box box-success"><span class="icon">✅</span><div><strong>Day 5 Success:</strong> Reach Tokyo without stress and get a taste of Shinjuku without staying out too late.</div></div>
+
+<details class="photo-gallery">
+  <summary><span class="pg-icon">📸</span> Photo Reference — Day 5 – Shinkansen & Shinjuku</summary>
+  <div class="pg-grid">
+        <div class="pg-item">
+          <img src="assets/photos/day05-shinkansen-shinjuku/kyoto-station.jpg" alt="Kyoto Station" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Kyoto Station</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day05-shinkansen-shinjuku/kamo-river.jpg" alt="Kamo River" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Kamo River</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day05-shinkansen-shinjuku/shinjuku.jpg" alt="Shinjuku" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Shinjuku</div>
+        </div>
+  </div>
+</details>
 </div>
 </div>
 <div class="section-footer"><p>Japan Trip 2026  ·  <strong>Hemanth Kumar Jarajapu</strong>  ·  17–26 November 2026</p><p style="margin-top:5px;">⚠️ Verify train times, attraction hours, and ticket availability 1–3 days before travel.</p></div>
@@ -1929,6 +2085,36 @@
 </div>
 
 <div class="info-box box-success" style="margin-top:12px;"><span class="icon">✅</span><div><strong>Day 6 Success:</strong> A full, beautifully paced Kamakura day — bamboo in the morning, the Great Buddha and Hasedera in the afternoon, brunch by the sea at Bill's, the iconic golden-hour crossing, and a memorable early dinner at Onari Yokocho. Back at the hotel by 19:15, rested for Day 7 Fuji.</div></div>
+
+<details class="photo-gallery">
+  <summary><span class="pg-icon">📸</span> Photo Reference — Day 6 – Kamakura</summary>
+  <div class="pg-grid">
+        <div class="pg-item">
+          <img src="assets/photos/day06-kamakura/hokokuji.jpg" alt="Hokokuji" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Hokokuji</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day06-kamakura/great-buddha.jpg" alt="Great Buddha" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Great Buddha</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day06-kamakura/hasedera.jpg" alt="Hasedera" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Hasedera</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day06-kamakura/bills-cafe.jpg" alt="Bill's Café" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Bill's Café</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day06-kamakura/kamakurakokomae.jpg" alt="Kamakurakokomae" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Kamakurakokomae</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day06-kamakura/onari-yokocho.jpg" alt="Onari Yokocho" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Onari Yokocho</div>
+        </div>
+  </div>
+</details>
 </div>
 </div>
 <div class="section-footer"><p>Japan Trip 2026  ·  <strong>Hemanth Kumar Jarajapu</strong>  ·  17–26 November 2026</p><p style="margin-top:5px;">⚠️ Verify train times, attraction hours, and ticket availability 1–3 days before travel.</p></div>
@@ -2053,6 +2239,20 @@
 </ul>
 </div>
 <div class="info-box box-success"><span class="icon">✅</span><div><strong>Day 7 Success:</strong> Seeing Fuji is weather-dependent. A calm lake / food / photo day is still a success.</div></div>
+
+<details class="photo-gallery">
+  <summary><span class="pg-icon">📸</span> Photo Reference — Day 7 – Mt. Fuji / Kawaguchiko</summary>
+  <div class="pg-grid">
+        <div class="pg-item">
+          <img src="assets/photos/day07-fujikawaguchiko/mt-fuji.jpg" alt="Mt. Fuji" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Mt. Fuji</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day07-fujikawaguchiko/kawaguchiko.jpg" alt="Lake Kawaguchiko" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Lake Kawaguchiko</div>
+        </div>
+  </div>
+</details>
 </div>
 </div>
 <div class="section-footer"><p>Japan Trip 2026  ·  <strong>Hemanth Kumar Jarajapu</strong>  ·  17–26 November 2026</p><p style="margin-top:5px;">⚠️ Verify train times, attraction hours, and ticket availability 1–3 days before travel.</p></div>
@@ -2208,6 +2408,24 @@
 </ul>
 </div>
 <div class="info-box box-success" style="margin-top:10px;"><span class="icon">✅</span><div><strong>Day 8 Success:</strong> A full Harry Potter day and a fun Shibuya evening without rushing. Shimokitazawa is a bonus flex option.</div></div>
+
+<details class="photo-gallery">
+  <summary><span class="pg-icon">📸</span> Photo Reference — Day 8 – WB Studio & Shibuya</summary>
+  <div class="pg-grid">
+        <div class="pg-item">
+          <img src="assets/photos/day08-wbstudio-shibuya/wb-studio.jpg" alt="Warner Bros. Studio" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Warner Bros. Studio</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day08-wbstudio-shibuya/shibuya.jpg" alt="Shibuya" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Shibuya</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day08-wbstudio-shibuya/shimokitazawa.jpg" alt="Shimokitazawa" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Shimokitazawa</div>
+        </div>
+  </div>
+</details>
 </div>
 </div>
 <div class="section-footer"><p>Japan Trip 2026  ·  <strong>Hemanth Kumar Jarajapu</strong>  ·  17–26 November 2026</p><p style="margin-top:5px;">⚠️ Verify train times, attraction hours, and ticket availability 1–3 days before travel.</p></div>
@@ -2395,6 +2613,32 @@
 </ul>
 </div>
 <div class="info-box box-success"><span class="icon">✅</span><div><strong>Day 9 Success:</strong> Hamarikyu garden calm → teamLab magic → final gifts → Haneda hotel without stress.</div></div>
+
+<details class="photo-gallery">
+  <summary><span class="pg-icon">📸</span> Photo Reference — Day 9 – teamLab & Tokyo</summary>
+  <div class="pg-grid">
+        <div class="pg-item">
+          <img src="assets/photos/day09-tokyo-teamlab/asakusa.jpg" alt="Asakusa" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Asakusa</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day09-tokyo-teamlab/sensoji.jpg" alt="Senso-ji" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Senso-ji</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day09-tokyo-teamlab/teamlab-planets.jpg" alt="teamLab Planets" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">teamLab Planets</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day09-tokyo-teamlab/hamarikyu.jpg" alt="Hamarikyu Gardens" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Hamarikyu Gardens</div>
+        </div>
+        <div class="pg-item">
+          <img src="assets/photos/day09-tokyo-teamlab/tokyo-station.jpg" alt="Tokyo Station" loading="lazy" onerror="this.closest('.pg-item').style.opacity='0.3'"/>
+          <div class="pg-label">Tokyo Station</div>
+        </div>
+  </div>
+</details>
 </div>
 </div>
 <div class="section-footer"><p>Japan Trip 2026  ·  <strong>Hemanth Kumar Jarajapu</strong>  ·  17–26 November 2026</p><p style="margin-top:5px;">⚠️ Verify train times, attraction hours, and ticket availability 1–3 days before travel.</p></div>
