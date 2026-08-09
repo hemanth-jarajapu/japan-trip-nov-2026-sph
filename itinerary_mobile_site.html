@@ -28,6 +28,202 @@
     --sidebar-collapsed: 48px;
     --header-h: 0px;
   }
+  /* ── DARK MODE ── */
+  body.dark-mode {
+    --red:      #e05545;
+    --red-lt:   #ff6b5b;
+    --gold:     #f0b429;
+    --gold-dk:  #c89a00;
+    --navy:     #1a2744;
+    --navy2:    #2a4a88;
+    --ink:      #e8ecf4;
+    --muted:    #9aa0b8;
+    --bg:       #0f1117;
+    --card:     #1a1d28;
+    --card2:    #1e2130;
+    --border:   #2e3248;
+    --tag-bg:   #2a2410;
+    --tag-br:   #c89a00;
+    --success:  #2ecc71;
+    --warn:     #e08a20;
+    --info:     #4a9fd4;
+  }
+  body.dark-mode .sidebar {
+    background: #14172200;
+    border-right-color: var(--border);
+  }
+  body.dark-mode .sidebar-header { background: var(--navy); }
+  body.dark-mode .sidebar-nav a { color: #c4cade; }
+  body.dark-mode .sidebar-nav a:hover,
+  body.dark-mode .sidebar-nav a.active { background: rgba(255,255,255,0.08); color: #fff; }
+  body.dark-mode .nav-group-label { color: #6a72a0; }
+  body.dark-mode .sidebar-search input {
+    background: #1e2130;
+    border-color: #2e3248;
+    color: #c4cade;
+  }
+  body.dark-mode .section-panel { background: var(--bg); }
+  body.dark-mode .card {
+    background: var(--card);
+    border-color: var(--border);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  }
+  body.dark-mode .card2 { background: var(--card2); }
+  body.dark-mode table th {
+    background: #1e2a4a;
+    color: #a8c0e8;
+    border-color: var(--border);
+  }
+  body.dark-mode table td { border-color: var(--border); color: var(--ink); }
+  body.dark-mode table tr:nth-child(even) td { background: #1e2130; }
+  body.dark-mode table tr:hover td { background: #252840; }
+  body.dark-mode .info-box.box-info { background: #0e2040; border-color: #1a5080; color: #8ac4f0; }
+  body.dark-mode .info-box.box-warn { background: #2a1800; border-color: #7a3800; color: #f0a040; }
+  body.dark-mode .info-box.box-success { background: #0a2010; border-color: #1a6030; color: #4ecc80; }
+  body.dark-mode .info-box.box-danger { background: #2a0808; border-color: #801010; color: #f08080; }
+  body.dark-mode .info-box.box-red { background: #2a0808; border-left-color: #c03030; color: #f08080; }
+  body.dark-mode .info-box.box-red strong { color: #ffaaaa; }
+  body.dark-mode .badge { opacity: 0.9; }
+  body.dark-mode .progress-bar { background: #1e2130; }
+  body.dark-mode .mobile-nav-bar { background: #14172a; border-top-color: #2e3248; }
+  body.dark-mode .mobile-nav-bar button { color: #8090b8; }
+  body.dark-mode .mobile-nav-bar button:disabled { color: #3a4060; }
+  body.dark-mode .mobile-menu-btn { background: var(--navy); }
+  body.dark-mode ::-webkit-scrollbar-track { background: #0f1117; }
+  body.dark-mode ::-webkit-scrollbar-thumb { background: #3a4060; }
+  body.dark-mode .lang-tabs { background: #14172a; border-bottom-color: #2e3248; }
+  body.dark-mode .lang-tab { color: #8090b8; }
+  body.dark-mode .lang-tab:hover { background: #1e2240; color: #c4cade; }
+  body.dark-mode .lang-tab.active { background: #1a3a6e; color: #ffffff; border-bottom-color: var(--gold); }
+  body.dark-mode .table-scroll-hint { color: #5a6490; }
+  body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
+  body.dark-mode h4, body.dark-mode h5 { color: #dde4f4; }
+  body.dark-mode .section-header { background: linear-gradient(135deg, #1a2744 0%, #1e2a4a 100%); }
+  body.dark-mode .tier-box { background: #1a1d28; border-color: #2e3248; }
+  body.dark-mode .day-pill { background: #1a2744; }
+  body.dark-mode input, body.dark-mode textarea, body.dark-mode select {
+    background: #1e2130; color: #c4cade; border-color: #2e3248;
+  }
+
+  /* ── COMPREHENSIVE DARK MODE FIXES ── */
+  /* Card headings: var(--navy) is dark on dark cards — override to light */
+  body.dark-mode .card h3 { color: #a8c8f0; }
+  body.dark-mode .card h4 { color: #8ab0d8; }
+  body.dark-mode .card p,
+  body.dark-mode .card li,
+  body.dark-mode .card ul,
+  body.dark-mode .card ol { color: #c4cade; }
+
+  /* Day blocks */
+  body.dark-mode .day-info {
+    background: linear-gradient(90deg, #1a2744 0%, #1e2438 100%);
+  }
+  body.dark-mode .day-info h2 { color: #dde4f4; }
+  body.dark-mode .day-info .day-meta { color: #8090b8; }
+  body.dark-mode .day-badges { background: #141722; border-bottom-color: #2e3248; }
+  body.dark-mode .badge-main    { background: #3a1018; color: #f08080; border: 1px solid #8a2828; }
+  body.dark-mode .badge-support { background: #0e2040; color: #80b8f0; border: 1px solid #1a4878; }
+  body.dark-mode .badge-opt     { background: #2a1e08; color: #f0c060; border: 1px solid #7a5010; }
+  body.dark-mode .badge-energy  { background: #0a2010; color: #60d888; border: 1px solid #1a5828; }
+
+  /* Info / tip boxes */
+  body.dark-mode body.dark-mode .box-red  { background: #2a0808; border-left-color: #c03030; color: #f08080; }
+
+  /* Coloured specialty boxes */
+  body.dark-mode .transport-detail-box {
+    background: #0e1e38; border-color: #1a3a6e; color: #a0c0e8;
+  }
+  body.dark-mode .transport-detail-box .transport-header { color: #7aacdc; }
+  body.dark-mode .food-guide-box {
+    background: #201408; border-color: #6a3800; color: #e0a840;
+  }
+  body.dark-mode .photo-tips-box {
+    background: #0e1a30; border-color: #1a3068; color: #90b8e8;
+  }
+  body.dark-mode .precaution-box {
+    background: #2a0808; border-color: #8a1818; color: #f09090;
+  }
+  body.dark-mode .ticket-box {
+    background: #081e10; border-color: #1a5828; color: #60d890;
+  }
+  body.dark-mode .safety-banner {
+    background: #201408; border-color: #6a3800; color: #e0a840;
+  }
+  body.dark-mode .hamarikyu-card {
+    background: #081a10; border-color: #1a5830; color: #60cc80;
+  }
+  body.dark-mode .hamarikyu-card h4 { color: #4ecc80; }
+  body.dark-mode .hamarikyu-card p,
+  body.dark-mode .hamarikyu-card li  { color: #80c898; }
+  body.dark-mode .shimo-card {
+    background: #120e28; border-color: #3828a0; color: #a898e8;
+  }
+  body.dark-mode .shimo-card h4 { color: #9080e0; }
+
+  /* Decision / info boxes */
+  body.dark-mode .decision-box {
+    background: #0e1e38; border-color: #1a3a6e; border-left-color: #4a9fd4;
+  }
+  body.dark-mode .decision-box h4 { color: #a0c4e8; }
+  body.dark-mode .decision-table th {
+    background: #1a2a48; color: #a0c0e8; border-color: #2e3a58;
+  }
+  body.dark-mode .decision-table td {
+    border-bottom-color: #2e3248; color: #c4cade;
+  }
+  body.dark-mode .decision-table tr:nth-child(even) td { background: #141e30; }
+  body.dark-mode .decision-table tr:hover td { background: #1a2840; }
+
+  /* Mini note */
+  body.dark-mode .mini-note {
+    background: #201808; border-color: #7a5010; border-left-color: var(--gold); color: #e0b840;
+  }
+
+  /* Inline badges */
+  body.dark-mode .change-badge { background: #200e40; border-color: #5838b0; color: #b098f0; }
+  body.dark-mode .new-badge    { background: #081e10; border-color: #2a7848; color: #60cc80; }
+
+  /* Schedule table headers (separate from generic table th) */
+  body.dark-mode .sched-table th {
+    background: #1a2a48; color: #a0c0e8; border-bottom-color: #2e3a58;
+  }
+  body.dark-mode .sched-table td { border-bottom-color: #1e2438; color: #c4cade; }
+  body.dark-mode .sched-table tr:nth-child(even) td { background: #141e30; }
+  body.dark-mode .sched-table tr:hover td { background: #1a2840; }
+
+  /* Section titles that use var(--navy) — override in dark */
+  body.dark-mode .section-title { color: #dde4f4; }
+  body.dark-mode .section-subtitle { color: #a8c0e8; }
+
+  /* Sidebar active/hover states — ensure text is readable */
+  body.dark-mode .sidebar { background: #0f1117; }
+  body.dark-mode .sidebar-nav a { color: #a0a8c8; }
+
+  /* day-body h3 uses var(--gold) which is fine but ensuring li/p text is visible */
+  body.dark-mode .day-body li,
+  body.dark-mode .day-body p  { color: #c4cade; }
+  body.dark-mode .day-body strong { color: #e8ecf4; }
+
+  /* Ensure paragraph text in info-box variants is readable */
+  body.dark-mode .info-box/* Kanji sign cells - bold, colored, dark-mode aware */
+  .kanji-red-cell   { font-size: 1.4rem; font-weight: 700; color: #c0392b; }
+  .kanji-amber-cell { font-size: 1.4rem; font-weight: 700; color: #b05a00; }
+  body.dark-mode .kanji-red-cell   { color: #ff6b6b; }
+  body.dark-mode .kanji-amber-cell { color: #f0a030; }
+  /* Dark mode toggle button */
+  .dm-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 4px 6px;
+    border-radius: 6px;
+    color: #ffffff;
+    transition: background .2s;
+    flex-shrink: 0;
+  }
+  .dm-toggle-btn:hover { background: rgba(255,255,255,0.15); }
+
   *{box-sizing:border-box;margin:0;padding:0;}
   html, body { height:100%; overflow:hidden; }
   body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.65;display:flex;flex-direction:column;}
@@ -759,6 +955,59 @@
   .lang-tab-content { animation: fadeInTab .18s ease; }
   @keyframes fadeInTab { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
+
+  .dm-mob-btn {
+    font-size: 1rem;
+    padding: 4px 8px;
+    min-width: 36px;
+  }
+  body.dark-mode .mobile-bottom-nav {
+    background: #14172a;
+    border-top-color: #2e3248;
+    color: #8090b8;
+  }
+  body.dark-mode .mnav-btn {
+    color: #8090b8;
+    background: none;
+  }
+  body.dark-mode .mnav-btn:disabled { color: #3a4060; }
+  body.dark-mode .mnav-indicator { color: #6a72a0; }
+
+  /* ===== DARK MODE: Etiquette Cards ===== */
+  body.dark-mode .etiquette-card {
+    background: #1a1f2e;
+    border-color: #2a3050;
+    border-top-color: #4a7fd4;
+    box-shadow: 0 1px 6px rgba(0,0,0,.4);
+  }
+  body.dark-mode .etiquette-card h4 {
+    color: #a8c8f0;
+  }
+  body.dark-mode .etiquette-card li {
+    color: #c4cade;
+  }
+  body.dark-mode .etiquette-card strong {
+    color: #e0e8ff;
+  }
+  body.dark-mode .etiquette-card em {
+    color: #b0c4e8;
+  }
+
+  /* ===== DARK MODE: box-tip (light mode is #e8f3fc) ===== */
+  body.dark-mode .box-tip {
+    background: #0e2040 !important;
+    border-left-color: #4a9fd4 !important;
+    border-color: #1a5080 !important;
+    color: #8ac4f0 !important;
+  }
+  body.dark-mode .box-tip p,
+  body.dark-mode .box-tip span,
+  body.dark-mode .box-tip li,
+  body.dark-mode .box-tip strong {
+    color: #8ac4f0 !important;
+  }
+
+  
 </style>
 </head>
 <body>
@@ -767,8 +1016,11 @@
 <aside class="sidebar" id="sidebar">
 <div class="sidebar-header">
 <span class="sidebar-title">Navigation</span>
+<div style="display:flex;align-items:center;gap:4px;">
+<button class="dm-toggle-btn" id="dmToggleBtn" onclick="toggleDarkMode()" title="Toggle dark/light mode">🌙</button>
 <button class="toggle-btn" id="toggleBtn" onclick="toggleSidebar()" title="Toggle navigation">◀</button>
 <button class="sidebar-close-btn" id="sidebarCloseBtn" onclick="closeMobileSidebar()" title="Close menu">✕</button>
+</div>
 </div>
 <div class="sidebar-search">
 <input id="navSearch" oninput="filterNav(this.value)" placeholder="🔍 Search sections…" type="text"/>
@@ -2923,6 +3175,7 @@
   <button class="lang-tab" onclick="switchLangTab('emergency',this)">🆘 Emergency</button>
   <button class="lang-tab" onclick="switchLangTab('signs',this)">🚦 Signs & Kanji</button>
   <button class="lang-tab" onclick="switchLangTab('numbers',this)">🔢 Numbers</button>
+  <button class="lang-tab" onclick="switchLangTab('timedays',this)">📅 Time & Days</button>
   <button class="lang-tab" onclick="switchLangTab('cultural',this)">🎌 Cultural Words</button>
 </div>
 
@@ -3107,27 +3360,27 @@
 <div class="card" style="margin-bottom:12px;">
   <h3 style="margin-bottom:10px;">🚉 Transport & Navigation Kanji</h3>
   <table class="sched-table">
-    <tr><th>Kanji / Sign</th><th>Reading</th><th>Meaning</th><th>Where you'll see it</th></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">出口</td><td>Deguchi</td><td>Exit</td><td>Every station, building, shop</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">入口</td><td>Iriguchi</td><td>Entrance</td><td>Every station, building, shop</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">改札</td><td>Kaisatsu</td><td>Ticket gate / wicket</td><td>Train & subway stations</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">乗り換え</td><td>Norikae</td><td>Transfer (change trains)</td><td>Station signs, platform boards</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">乗り場</td><td>Noriba</td><td>Boarding area / platform</td><td>Bus stops, taxi ranks, stations</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">駅</td><td>Eki</td><td>Station</td><td>Signs, maps, announcements</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">地下鉄</td><td>Chikatetsu</td><td>Subway / metro</td><td>Maps, underground signs</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">新幹線</td><td>Shinkansen</td><td>Bullet train</td><td>Station signs, tickets</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">普通</td><td>Futsuu</td><td>Local train (stops at all stations)</td><td>Train boards, platform screens</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">急行</td><td>Kyuukou</td><td>Express train (limited stops)</td><td>Train boards, platform screens</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">特急</td><td>Tokkyuu</td><td>Limited express (fewest stops)</td><td>Train boards — may need extra ticket</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">切符</td><td>Kippu</td><td>Ticket</td><td>Ticket machines, windows</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">案内</td><td>Annai</td><td>Information / guidance</td><td>Information counters, maps</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">東 西 南 北</td><td>Higashi / Nishi / Minami / Kita</td><td>East / West / South / North</td><td>Station exits (e.g. 東口 = East Exit)</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">〜口</td><td>~ guchi</td><td>~ gate / exit (e.g. 東口 East Exit)</td><td>All major stations</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">お手洗い</td><td>Otearai</td><td>Restroom / toilet</td><td>Public areas, stations, malls</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">バス</td><td>Basu</td><td>Bus</td><td>Bus stops, route boards</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">タクシー</td><td>Takushii</td><td>Taxi</td><td>Taxi ranks, apps</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">空港</td><td>Kuukou</td><td>Airport</td><td>Signs on highways, trains</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">道</td><td>Michi / Dou</td><td>Road / path / way</td><td>Street maps, directions</td></tr>
+    <tr><th>Kanji / Sign</th><th>Meaning</th><th>Reading</th><th>Where you'll see it</th></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">出口</td><td>Exit</td><td>Deguchi</td><td>Every station, building, shop</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">入口</td><td>Entrance</td><td>Iriguchi</td><td>Every station, building, shop</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">改札</td><td>Ticket gate / wicket</td><td>Kaisatsu</td><td>Train & subway stations</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">乗り換え</td><td>Transfer (change trains)</td><td>Norikae</td><td>Station signs, platform boards</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">乗り場</td><td>Boarding area / platform</td><td>Noriba</td><td>Bus stops, taxi ranks, stations</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">駅</td><td>Station</td><td>Eki</td><td>Signs, maps, announcements</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">地下鉄</td><td>Subway / metro</td><td>Chikatetsu</td><td>Maps, underground signs</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">新幹線</td><td>Bullet train</td><td>Shinkansen</td><td>Station signs, tickets</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">普通</td><td>Local train (stops at all stations)</td><td>Futsuu</td><td>Train boards, platform screens</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">急行</td><td>Express train (limited stops)</td><td>Kyuukou</td><td>Train boards, platform screens</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">特急</td><td>Limited express (fewest stops)</td><td>Tokkyuu</td><td>Train boards — may need extra ticket</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">切符</td><td>Ticket</td><td>Kippu</td><td>Ticket machines, windows</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">案内</td><td>Information / guidance</td><td>Annai</td><td>Information counters, maps</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">東 西 南 北</td><td>East / West / South / North</td><td>Higashi / Nishi / Minami / Kita</td><td>Station exits (e.g. 東口 = East Exit)</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">〜口</td><td>~ gate / exit (e.g. 東口 East Exit)</td><td>~ guchi</td><td>All major stations</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">お手洗い</td><td>Restroom / toilet</td><td>Otearai</td><td>Public areas, stations, malls</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">バス</td><td>Bus</td><td>Basu</td><td>Bus stops, route boards</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">タクシー</td><td>Taxi</td><td>Takushii</td><td>Taxi ranks, apps</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">空港</td><td>Airport</td><td>Kuukou</td><td>Signs on highways, trains</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">道</td><td>Road / path / way</td><td>Michi / Dou</td><td>Street maps, directions</td></tr>
   </table>
 </div>
 
@@ -3136,18 +3389,18 @@
   <h3 style="margin-bottom:10px;">🚫 Prohibition & Warning Kanji</h3>
   <div class="info-box box-warn" style="margin-bottom:10px;"><span class="icon">⚠️</span><div>These appear on signs without English. Recognising them prevents fines, embarrassment, or safety incidents.</div></div>
   <table class="sched-table">
-    <tr><th>Kanji / Sign</th><th>Reading</th><th>Meaning</th><th>Where you'll see it</th></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;color:#c0392b;">禁止</td><td>Kinshi</td><td>Prohibited / Forbidden</td><td>Parks, temples, trains — always obey</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;color:#c0392b;">立入禁止</td><td>Tachiiri kinshi</td><td>No entry / Do not enter</td><td>Restricted areas, construction zones</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;color:#c0392b;">撮影禁止</td><td>Satsuei kinshi</td><td>No photography</td><td>Temples, museums — Gion area especially</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;color:#c0392b;">飲食禁止</td><td>Inshoku kinshi</td><td>No eating or drinking</td><td>Trains, some parks, shrines</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;color:#c0392b;">禁煙</td><td>Kin'en</td><td>No smoking</td><td>Trains, restaurants, most public spaces</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;color:#b05a00;">注意</td><td>Chuui</td><td>Caution / Warning</td><td>Wet floors, construction, stairs</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;color:#b05a00;">危険</td><td>Kiken</td><td>Danger</td><td>Construction sites, high-voltage areas</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;color:#b05a00;">非常口</td><td>Hijou guchi</td><td>Emergency exit</td><td>All buildings — green running figure sign</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;color:#b05a00;">避難場所</td><td>Hinan basho</td><td>Evacuation area / Shelter</td><td>Street signs, park noticeboards</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;color:#b05a00;">地震</td><td>Jishin</td><td>Earthquake</td><td>Emergency broadcasts, warning signs</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;color:#b05a00;">津波</td><td>Tsunami</td><td>Tsunami</td><td>Coastal warning signs</td></tr>
+    <tr><th>Kanji / Sign</th><th>Meaning</th><th>Reading</th><th>Where you'll see it</th></tr>
+    <tr><td class="kanji-red-cell">禁止</td><td>Prohibited / Forbidden</td><td>Kinshi</td><td>Parks, temples, trains — always obey</td></tr>
+    <tr><td class="kanji-red-cell">立入禁止</td><td>No entry / Do not enter</td><td>Tachiiri kinshi</td><td>Restricted areas, construction zones</td></tr>
+    <tr><td class="kanji-red-cell">撮影禁止</td><td>No photography</td><td>Satsuei kinshi</td><td>Temples, museums — Gion area especially</td></tr>
+    <tr><td class="kanji-red-cell">飲食禁止</td><td>No eating or drinking</td><td>Inshoku kinshi</td><td>Trains, some parks, shrines</td></tr>
+    <tr><td class="kanji-red-cell">禁煙</td><td>No smoking</td><td>Kin'en</td><td>Trains, restaurants, most public spaces</td></tr>
+    <tr><td class="kanji-amber-cell">注意</td><td>Caution / Warning</td><td>Chuui</td><td>Wet floors, construction, stairs</td></tr>
+    <tr><td class="kanji-amber-cell">危険</td><td>Danger</td><td>Kiken</td><td>Construction sites, high-voltage areas</td></tr>
+    <tr><td class="kanji-amber-cell">非常口</td><td>Emergency exit</td><td>Hijou guchi</td><td>All buildings — green running figure sign</td></tr>
+    <tr><td class="kanji-amber-cell">避難場所</td><td>Evacuation area / Shelter</td><td>Hinan basho</td><td>Street signs, park noticeboards</td></tr>
+    <tr><td class="kanji-amber-cell">地震</td><td>Earthquake</td><td>Jishin</td><td>Emergency broadcasts, warning signs</td></tr>
+    <tr><td class="kanji-amber-cell">津波</td><td>Tsunami</td><td>Tsunami</td><td>Coastal warning signs</td></tr>
   </table>
 </div>
 
@@ -3155,21 +3408,21 @@
 <div class="card" style="margin-bottom:12px;">
   <h3 style="margin-bottom:10px;">🏪 Facility & Service Signs</h3>
   <table class="sched-table">
-    <tr><th>Kanji / Sign</th><th>Reading</th><th>Meaning</th><th>Where you'll see it</th></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">営業中</td><td>Eigyou chuu</td><td>Open / Currently in business</td><td>Restaurant & shop doors</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">閉店</td><td>Heiten</td><td>Closed</td><td>Restaurant & shop doors</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">定休日</td><td>Teikyuubi</td><td>Regular closing day</td><td>Shop/restaurant signs</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">満員</td><td>Man'in</td><td>Full / No vacancy</td><td>Restaurants, car parks, trains</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">空き</td><td>Aki</td><td>Available / Vacancy</td><td>Car parks, seating, toilets</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">使用中</td><td>Shiyou chuu</td><td>In use / Occupied</td><td>Toilet cubicles, fitting rooms</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">現金のみ</td><td>Genkin nomi</td><td>Cash only</td><td>Small restaurants, vending machines</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">両替</td><td>Ryougae</td><td>Currency exchange</td><td>Banks, airports, some hotels</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">ATM</td><td>ATM (same)</td><td>ATM — 7-Eleven ATMs accept foreign cards</td><td>Konbini (7-Eleven), Japan Post</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">病院</td><td>Byouin</td><td>Hospital</td><td>Street signs, maps</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">警察</td><td>Keisatsu</td><td>Police</td><td>Police boxes (koban) everywhere</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">交番</td><td>Koban</td><td>Police box / local police post</td><td>Street corners — safe to approach for help</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">郵便局</td><td>Yuubinkyoku</td><td>Post office</td><td>Has reliable international ATMs</td></tr>
-    <tr><td style="font-size:1.4rem;font-weight:700;">コンビニ</td><td>Konbini</td><td>Convenience store</td><td>7-Eleven, FamilyMart, Lawson</td></tr>
+    <tr><th>Kanji / Sign</th><th>Meaning</th><th>Reading</th><th>Where you'll see it</th></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">営業中</td><td>Open / Currently in business</td><td>Eigyou chuu</td><td>Restaurant & shop doors</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">閉店</td><td>Closed</td><td>Heiten</td><td>Restaurant & shop doors</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">定休日</td><td>Regular closing day</td><td>Teikyuubi</td><td>Shop/restaurant signs</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">満員</td><td>Full / No vacancy</td><td>Man'in</td><td>Restaurants, car parks, trains</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">空き</td><td>Available / Vacancy</td><td>Aki</td><td>Car parks, seating, toilets</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">使用中</td><td>In use / Occupied</td><td>Shiyou chuu</td><td>Toilet cubicles, fitting rooms</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">現金のみ</td><td>Cash only</td><td>Genkin nomi</td><td>Small restaurants, vending machines</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">両替</td><td>Currency exchange</td><td>Ryougae</td><td>Banks, airports, some hotels</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">ATM</td><td>ATM — 7-Eleven ATMs accept foreign cards</td><td>ATM (same)</td><td>Konbini (7-Eleven), Japan Post</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">病院</td><td>Hospital</td><td>Byouin</td><td>Street signs, maps</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">警察</td><td>Police</td><td>Keisatsu</td><td>Police boxes (koban) everywhere</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">交番</td><td>Police box / local police post</td><td>Koban</td><td>Street corners — safe to approach for help</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">郵便局</td><td>Post office</td><td>Yuubinkyoku</td><td>Has reliable international ATMs</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">コンビニ</td><td>Convenience store</td><td>Konbini</td><td>7-Eleven, FamilyMart, Lawson</td></tr>
   </table>
 </div>
 
@@ -3227,6 +3480,11 @@
 <tr><td>10 000</td><td>Man</td><td>万</td></tr>
 </table>
 </div>
+</div><!-- /numbers -->
+<!-- ══════════════════════════════════════════════════════
+     TAB: TIME & DAYS
+══════════════════════════════════════════════════════ -->
+<div id="langtab-timedays" class="lang-tab-content" style="display:none;">
 <div class="card" style="margin-bottom:12px;">
   <h3 style="margin-bottom:10px;">🕐 Time & Days</h3>
   <table class="sched-table">
@@ -3247,7 +3505,26 @@
 <tr><td>Yesterday</td><td>Kinou</td><td>昨日</td></tr>
 </table>
 </div>
-</div><!-- /numbers -->
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">⏰ Useful Time Expressions</h3>
+  <table class="sched-table">
+<tr><th>Meaning / When to use</th><th>Romaji</th><th>Japanese</th></tr>
+<tr><td>Morning</td><td>Asa</td><td>朝</td></tr>
+<tr><td>Afternoon</td><td>Gogo</td><td>午後</td></tr>
+<tr><td>Evening</td><td>Yoru / Ban</td><td>夜 / 晩</td></tr>
+<tr><td>Now</td><td>Ima</td><td>今</td></tr>
+<tr><td>Later / After a while</td><td>Ato de / Shibaraku</td><td>後で / しばらく</td></tr>
+<tr><td>Soon</td><td>Mou sugu</td><td>もうすぐ</td></tr>
+<tr><td>~ minutes from now</td><td>~ fun go</td><td>〜分後</td></tr>
+<tr><td>Last train (important!)</td><td>Shuu-den</td><td>終電</td></tr>
+<tr><td>Opening time</td><td>Kaiten jikan</td><td>開店時間</td></tr>
+<tr><td>Closing time</td><td>Heiten jikan</td><td>閉店時間</td></tr>
+<tr><td>Holiday / Day off (closed)</td><td>Kyuujitsu / Yasumi</td><td>休日 / 休み</td></tr>
+<tr><td>This week</td><td>Konshu</td><td>今週</td></tr>
+<tr><td>Next week</td><td>Raishu</td><td>来週</td></tr>
+</table>
+</div>
+</div><!-- /timedays -->
 
 <!-- ══════════════════════════════════════════════════════
      TAB: CULTURAL WORDS
@@ -3303,6 +3580,7 @@
 <div class="mobile-bottom-nav" id="mobileBottomNav">
 <button class="mnav-btn" id="mnavPrev" onclick="prevSection()">‹ Prev</button>
 <span class="mnav-indicator" id="mnavIndicator">Section 1 of 21</span>
+<button class="mnav-btn dm-mob-btn" id="dmToggleMobile" onclick="toggleDarkMode()" title="Toggle dark/light mode">🌙</button>
 <button class="mnav-btn" id="mnavNext" onclick="nextSection()">Next ›</button>
 </div>
 </div><!-- end main-area -->
@@ -3488,6 +3766,29 @@
     if (target) target.style.display = 'block';
     if (btn) btn.classList.add('active');
   }
+
+
+  // ── DARK MODE ──
+  function toggleDarkMode() {
+    const body = document.body;
+    const btn  = document.getElementById('dmToggleBtn');
+    const isDark = body.classList.toggle('dark-mode');
+    if (btn) btn.textContent = isDark ? '☀️' : '🌙';
+    const mBtn = document.getElementById('dmToggleMobile');
+    if (mBtn) mBtn.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('darkMode', isDark ? '1' : '0');
+  }
+  // Restore dark mode preference on load
+  (function() {
+    const saved = localStorage.getItem('darkMode');
+    if (saved === '1') {
+      document.body.classList.add('dark-mode');
+      const btn = document.getElementById('dmToggleBtn');
+      if (btn) btn.textContent = '☀️';
+      const mBtn = document.getElementById('dmToggleMobile');
+      if (mBtn) mBtn.textContent = '☀️';
+    }
+  })();
 
 </script>
 </body>
