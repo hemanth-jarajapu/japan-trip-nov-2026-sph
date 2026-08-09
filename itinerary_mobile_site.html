@@ -740,6 +740,25 @@
     .hero-left h1 { font-size: .92rem; }
     .day-num { font-size: 1.2rem; min-width: 50px; padding: 12px 14px; }
   }
+
+  /* ── LANGUAGE TAB STYLES ── */
+  .lang-tab {
+    padding: 6px 13px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--card);
+    color: var(--ink);
+    font-size: .78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s, color .15s, border-color .15s;
+    white-space: nowrap;
+  }
+  .lang-tab:hover { background: #eef2ff; border-color: var(--navy2); color: var(--navy); }
+  .lang-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .lang-tab-content { animation: fadeInTab .18s ease; }
+  @keyframes fadeInTab { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
 </style>
 </head>
 <body>
@@ -781,9 +800,10 @@
 <a data-label="🎟 Tickets" href="#tickets" onclick="navigateTo('tickets',this)"><span class="nav-icon">🎟</span><span class="nav-label">Tickets & Entry</span></a>
 <a data-label="📷 Photography" href="#photos" onclick="navigateTo('photos',this)"><span class="nav-icon">📷</span><span class="nav-label">Photography</span></a>
 <a data-label="🆘 Emergency" href="#emergency" onclick="navigateTo('emergency',this)"><span class="nav-icon">🆘</span><span class="nav-label">Emergency</span></a>
+<a data-label="🗣️ Language" href="#language" onclick="navigateTo('language',this)"><span class="nav-icon">🗣️</span><span class="nav-label">Language Guide</span></a>
 </nav>
 <div class="sidebar-progress">
-<div class="progress-label" id="progressLabel">Section 1 of 20</div>
+<div class="progress-label" id="progressLabel">Section 1 of 21</div>
 <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
 </div>
 </aside>
@@ -2884,11 +2904,405 @@
 <div class="section-footer"><p>Japan Trip 2026  ·  <strong>Hemanth Kumar Jarajapu</strong>  ·  17–26 November 2026</p><p style="margin-top:5px;">🎟 Prices and booking availability are approximate — verify on official websites before departure.</p></div>
 </div>
 
+
+<!-- PANEL: language -->
+<div class="section-panel" data-section="language" id="panel-language">
+<div class="section-title">🗣️ Language & Vocabulary Guide</div>
+
+<div class="info-box box-info" style="margin-bottom:18px;">
+  <span class="icon">💡</span>
+  <div><strong>How to use this section:</strong> Tap any category tab to jump straight to it. Phrases include Japanese script, romanisation (romaji), and meaning — perfect for quick glances and daily learning. Even a small effort to use Japanese is warmly appreciated by locals.</div>
+</div>
+
+<!-- ── TAB NAV ── -->
+<div id="lang-tabs" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
+  <button class="lang-tab active" onclick="switchLangTab('greetings',this)">👋 Greetings</button>
+  <button class="lang-tab" onclick="switchLangTab('navigation',this)">🚉 Getting Around</button>
+  <button class="lang-tab" onclick="switchLangTab('dining',this)">🍜 Dining</button>
+  <button class="lang-tab" onclick="switchLangTab('shopping',this)">🛍 Shopping</button>
+  <button class="lang-tab" onclick="switchLangTab('emergency',this)">🆘 Emergency</button>
+  <button class="lang-tab" onclick="switchLangTab('signs',this)">🚦 Signs & Kanji</button>
+  <button class="lang-tab" onclick="switchLangTab('numbers',this)">🔢 Numbers</button>
+  <button class="lang-tab" onclick="switchLangTab('cultural',this)">🎌 Cultural Words</button>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     TAB: GREETINGS & BASICS
+══════════════════════════════════════════════════════ -->
+<div id="langtab-greetings" class="lang-tab-content">
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">👋 Greetings & Daily Basics</h3>
+  <table class="sched-table">
+    <tr><th>Japanese</th><th>Romaji</th><th>Meaning / When to Use</th></tr>
+    <tr><td>こんにちは</td><td>Konnichiwa</td><td>Hello (late morning → evening)</td></tr>
+    <tr><td>おはようございます</td><td>Ohayou gozaimasu</td><td>Good morning (before ~11 am)</td></tr>
+    <tr><td>こんばんは</td><td>Konbanwa</td><td>Good evening</td></tr>
+    <tr><td>おやすみなさい</td><td>Oyasumi nasai</td><td>Good night</td></tr>
+    <tr><td>ありがとうございます</td><td>Arigatou gozaimasu</td><td>Thank you very much (polite)</td></tr>
+    <tr><td>ありがとう</td><td>Arigatou</td><td>Thank you (casual)</td></tr>
+    <tr><td>すみません</td><td>Sumimasen</td><td>Excuse me / Sorry — extremely versatile, use freely</td></tr>
+    <tr><td>ごめんなさい</td><td>Gomen nasai</td><td>I'm sorry (apology)</td></tr>
+    <tr><td>はい</td><td>Hai</td><td>Yes</td></tr>
+    <tr><td>いいえ</td><td>Iie</td><td>No</td></tr>
+    <tr><td>どうぞ</td><td>Douzo</td><td>Please go ahead / Here you are</td></tr>
+    <tr><td>よろしくおねがいします</td><td>Yoroshiku onegaishimasu</td><td>Nice to meet you / Please treat me well</td></tr>
+    <tr><td>わかりません</td><td>Wakarimasen</td><td>I don't understand</td></tr>
+    <tr><td>もう一度おねがいします</td><td>Mou ichido onegaishimasu</td><td>Please say that again</td></tr>
+    <tr><td>英語を話せますか？</td><td>Eigo o hanasemasu ka?</td><td>Do you speak English?</td></tr>
+    <tr><td>ゆっくり話してください</td><td>Yukkuri hanashite kudasai</td><td>Please speak slowly</td></tr>
+    <tr><td>これを書いてください</td><td>Kore o kaite kudasai</td><td>Please write this down</td></tr>
+  </table>
+</div>
+</div><!-- /greetings -->
+
+<!-- ══════════════════════════════════════════════════════
+     TAB: GETTING AROUND
+══════════════════════════════════════════════════════ -->
+<div id="langtab-navigation" class="lang-tab-content" style="display:none;">
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🚉 Transport & Directions</h3>
+  <table class="sched-table">
+    <tr><th>Japanese</th><th>Romaji</th><th>Meaning / When to Use</th></tr>
+    <tr><td>〜はどこですか？</td><td>~ wa doko desu ka?</td><td>Where is ~? (core direction phrase)</td></tr>
+    <tr><td>〜に行きたいです</td><td>~ ni ikitai desu</td><td>I want to go to ~</td></tr>
+    <tr><td>〜までおねがいします</td><td>~ made onegaishimasu</td><td>To ~ please (use in taxis — show map)</td></tr>
+    <tr><td>駅はどこですか？</td><td>Eki wa doko desu ka?</td><td>Where is the station?</td></tr>
+    <tr><td>トイレはどこですか？</td><td>Toire wa doko desu ka?</td><td>Where is the restroom?</td></tr>
+    <tr><td>この電車は〜に止まりますか？</td><td>Kono densha wa ~ ni tomarimasu ka?</td><td>Does this train stop at ~?</td></tr>
+    <tr><td>乗り換えはどこですか？</td><td>Norikae wa doko desu ka?</td><td>Where do I transfer?</td></tr>
+    <tr><td>切符はどこで買えますか？</td><td>Kippu wa doko de kaemasu ka?</td><td>Where can I buy a ticket?</td></tr>
+    <tr><td>右</td><td>Migi</td><td>Right</td></tr>
+    <tr><td>左</td><td>Hidari</td><td>Left</td></tr>
+    <tr><td>まっすぐ</td><td>Massugu</td><td>Straight ahead</td></tr>
+    <tr><td>近い</td><td>Chikai</td><td>Close / nearby</td></tr>
+    <tr><td>遠い</td><td>Tooi</td><td>Far</td></tr>
+    <tr><td>地図を見せてもらえますか？</td><td>Chizu o misete moraemasu ka?</td><td>Can you show me on the map?</td></tr>
+  </table>
+</div>
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🚕 Taxi Phrases</h3>
+  <div class="info-box box-info" style="margin-bottom:10px;"><span class="icon">💡</span><div>Always show the destination address or map on your phone. Taxis in Japan are honest but drivers often speak no English.</div></div>
+  <table class="sched-table">
+    <tr><th>Japanese</th><th>Romaji</th><th>Meaning</th></tr>
+    <tr><td>ここに行ってください</td><td>Koko ni itte kudasai</td><td>Please go here (pointing to map)</td></tr>
+    <tr><td>ここで止めてください</td><td>Koko de tomete kudasai</td><td>Please stop here</td></tr>
+    <tr><td>領収書をください</td><td>Ryoushuu sho o kudasai</td><td>Please give me a receipt</td></tr>
+    <tr><td>カードで払えますか？</td><td>Kaado de haraemasu ka?</td><td>Can I pay by card?</td></tr>
+  </table>
+</div>
+</div><!-- /navigation -->
+
+<!-- ══════════════════════════════════════════════════════
+     TAB: DINING
+══════════════════════════════════════════════════════ -->
+<div id="langtab-dining" class="lang-tab-content" style="display:none;">
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🍜 At Restaurants</h3>
+  <table class="sched-table">
+    <tr><th>Japanese</th><th>Romaji</th><th>Meaning / When to Use</th></tr>
+    <tr><td>いただきます</td><td>Itadakimasu</td><td>Said before eating — shows gratitude for the meal</td></tr>
+    <tr><td>ごちそうさまでした</td><td>Gochisousama deshita</td><td>Said after finishing — "that was a feast"</td></tr>
+    <tr><td>おいしい！</td><td>Oishii!</td><td>Delicious! (chefs love hearing this)</td></tr>
+    <tr><td>これをください</td><td>Kore o kudasai</td><td>I'll have this one please (point at menu)</td></tr>
+    <tr><td>お会計おねがいします</td><td>Okaikei onegaishimasu</td><td>The bill please</td></tr>
+    <tr><td>おすすめは何ですか？</td><td>Osusume wa nan desu ka?</td><td>What do you recommend?</td></tr>
+    <tr><td>お水をください</td><td>Omizu o kudasai</td><td>Water please</td></tr>
+    <tr><td>メニューをみせてください</td><td>Menyuu o misete kudasai</td><td>Please show me the menu</td></tr>
+    <tr><td>禁煙席をおねがいします</td><td>Kin'en seki o onegaishimasu</td><td>Non-smoking seat please</td></tr>
+    <tr><td>〜アレルギーがあります</td><td>~ arerugii ga arimasu</td><td>I have a ~ allergy (show card)</td></tr>
+    <tr><td>これに〜は入っていますか？</td><td>Kore ni ~ wa haitte imasu ka?</td><td>Does this contain ~?</td></tr>
+    <tr><td>肉は食べられません</td><td>Niku wa taberaremasen</td><td>I cannot eat meat</td></tr>
+    <tr><td>魚は食べられません</td><td>Sakana wa taberaremasen</td><td>I cannot eat fish</td></tr>
+    <tr><td>だしに魚は使っていますか？</td><td>Dashi ni sakana wa tsukatte imasu ka?</td><td>Is fish used in the dashi stock? (hidden ingredient risk)</td></tr>
+  </table>
+</div>
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🏪 Konbini (Convenience Store)</h3>
+  <div class="info-box box-warn" style="margin-bottom:10px;"><span class="icon">⚠️</span><div>Plastic bags now cost extra — staff will ask. Just say <strong>いいえ (Iie)</strong> to decline.</div></div>
+  <table class="sched-table">
+    <tr><th>Japanese</th><th>Romaji</th><th>Meaning</th></tr>
+    <tr><td>温めますか？</td><td>Atatamemasu ka?</td><td>Staff asking: shall I heat this up?</td></tr>
+    <tr><td>はい、おねがいします</td><td>Hai, onegaishimasu</td><td>Yes please</td></tr>
+    <tr><td>袋はいりません</td><td>Fukuro wa irimasen</td><td>No bag needed</td></tr>
+    <tr><td>レジ袋はありますか？</td><td>Rejibukuro wa arimasu ka?</td><td>Do you have plastic bags?</td></tr>
+    <tr><td>ポイントカードはありますか？</td><td>Pointo kaado wa arimasu ka?</td><td>Staff asking: do you have a points card?</td></tr>
+  </table>
+</div>
+</div><!-- /dining -->
+
+<!-- ══════════════════════════════════════════════════════
+     TAB: SHOPPING
+══════════════════════════════════════════════════════ -->
+<div id="langtab-shopping" class="lang-tab-content" style="display:none;">
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🛍 Shopping Phrases</h3>
+  <table class="sched-table">
+    <tr><th>Japanese</th><th>Romaji</th><th>Meaning</th></tr>
+    <tr><td>これはいくらですか？</td><td>Kore wa ikura desu ka?</td><td>How much is this?</td></tr>
+    <tr><td>これをください</td><td>Kore o kudasai</td><td>I'll take this one</td></tr>
+    <tr><td>〜はありますか？</td><td>~ wa arimasu ka?</td><td>Do you have ~?</td></tr>
+    <tr><td>見てもいいですか？</td><td>Mite mo ii desu ka?</td><td>May I take a look?</td></tr>
+    <tr><td>試着してもいいですか？</td><td>Shichaku shite mo ii desu ka?</td><td>May I try this on?</td></tr>
+    <tr><td>高い</td><td>Takai</td><td>Expensive</td></tr>
+    <tr><td>安い</td><td>Yasui</td><td>Cheap / affordable</td></tr>
+    <tr><td>無料</td><td>Muryou</td><td>Free of charge</td></tr>
+    <tr><td>クレジットカードで払えますか？</td><td>Kurejitto kaado de haraemasu ka?</td><td>Can I pay by credit card?</td></tr>
+    <tr><td>現金のみです</td><td>Genkin nomi desu</td><td>Cash only (sign/staff notice)</td></tr>
+    <tr><td>免税できますか？</td><td>Menzei dekimasu ka?</td><td>Can I get tax-free? (show passport)</td></tr>
+    <tr><td>領収書をください</td><td>Ryoushuu sho o kudasai</td><td>Please give me a receipt</td></tr>
+    <tr><td>ギフト包装をおねがいします</td><td>Gifuto housou o onegaishimasu</td><td>Gift wrapping please</td></tr>
+  </table>
+</div>
+</div><!-- /shopping -->
+
+<!-- ══════════════════════════════════════════════════════
+     TAB: EMERGENCY
+══════════════════════════════════════════════════════ -->
+<div id="langtab-emergency" class="lang-tab-content" style="display:none;">
+<div class="info-box box-warn" style="margin-bottom:14px;"><span class="icon">🆘</span><div>Emergency numbers: <strong>110</strong> = Police &nbsp;|&nbsp; <strong>119</strong> = Ambulance / Fire. Both work from any phone, free of charge. Operators have access to multilingual interpreters.</div></div>
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🆘 Emergency Phrases</h3>
+  <table class="sched-table">
+    <tr><th>Japanese</th><th>Romaji</th><th>Meaning</th></tr>
+    <tr style="background:#fff0f0;"><td><strong>助けてください！</strong></td><td><strong>Tasukete kudasai!</strong></td><td><strong>Help me! (most important phrase)</strong></td></tr>
+    <tr><td>救急車を呼んでください！</td><td>Kyuukyuusha o yonde kudasai!</td><td>Please call an ambulance!</td></tr>
+    <tr><td>警察を呼んでください！</td><td>Keisatsu o yonde kudasai!</td><td>Please call the police!</td></tr>
+    <tr><td>火事です！</td><td>Kaji desu!</td><td>Fire!</td></tr>
+    <tr><td>病院はどこですか？</td><td>Byouin wa doko desu ka?</td><td>Where is the hospital?</td></tr>
+    <tr><td>薬局はどこですか？</td><td>Yakkyoku wa doko desu ka?</td><td>Where is the pharmacy?</td></tr>
+    <tr><td>迷子になりました</td><td>Maigo ni narimashita</td><td>I am lost</td></tr>
+    <tr><td>財布を盗まれました</td><td>Saifu o nusumaremashita</td><td>My wallet was stolen</td></tr>
+    <tr><td>パスポートをなくしました</td><td>Pasupooto o nakushimashita</td><td>I lost my passport</td></tr>
+    <tr><td>気分が悪いです</td><td>Kibun ga warui desu</td><td>I feel unwell</td></tr>
+    <tr><td>ここが痛いです</td><td>Koko ga itai desu</td><td>It hurts here (point to body part)</td></tr>
+    <tr><td>アレルギーがあります</td><td>Arerugii ga arimasu</td><td>I have an allergy</td></tr>
+    <tr><td>インドから来ました</td><td>Indo kara kimashita</td><td>I came from India (for context at hospitals/police)</td></tr>
+    <tr><td>英語を話せる人はいますか？</td><td>Eigo o hanaseru hito wa imasu ka?</td><td>Is there anyone who speaks English?</td></tr>
+  </table>
+</div>
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🏥 Medical Vocabulary</h3>
+  <table class="sched-table">
+    <tr><th>Japanese</th><th>Romaji</th><th>Meaning</th></tr>
+    <tr><td>病院</td><td>Byouin</td><td>Hospital</td></tr>
+    <tr><td>薬局</td><td>Yakkyoku</td><td>Pharmacy (look for green cross ＋)</td></tr>
+    <tr><td>医者</td><td>Isha</td><td>Doctor</td></tr>
+    <tr><td>救急</td><td>Kyuukyuu</td><td>Emergency (medical)</td></tr>
+    <tr><td>薬</td><td>Kusuri</td><td>Medicine</td></tr>
+    <tr><td>熱</td><td>Netsu</td><td>Fever</td></tr>
+    <tr><td>頭痛</td><td>Zutsuu</td><td>Headache</td></tr>
+    <tr><td>吐き気</td><td>Hakike</td><td>Nausea</td></tr>
+  </table>
+</div>
+</div><!-- /emergency -->
+
+<!-- ══════════════════════════════════════════════════════
+     TAB: SIGNS & KANJI
+══════════════════════════════════════════════════════ -->
+<div id="langtab-signs" class="lang-tab-content" style="display:none;">
+
+<div class="info-box box-info" style="margin-bottom:14px;"><span class="icon">👁️</span><div>These are the kanji and symbols you will encounter every single day. Recognising them at a glance can prevent wrong trains, missed exits, and safety risks.</div></div>
+
+<!-- Navigation Kanji -->
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🚉 Transport & Navigation Kanji</h3>
+  <table class="sched-table">
+    <tr><th>Kanji / Sign</th><th>Reading</th><th>Meaning</th><th>Where you'll see it</th></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">出口</td><td>Deguchi</td><td>Exit</td><td>Every station, building, shop</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">入口</td><td>Iriguchi</td><td>Entrance</td><td>Every station, building, shop</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">改札</td><td>Kaisatsu</td><td>Ticket gate / wicket</td><td>Train & subway stations</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">乗り換え</td><td>Norikae</td><td>Transfer (change trains)</td><td>Station signs, platform boards</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">乗り場</td><td>Noriba</td><td>Boarding area / platform</td><td>Bus stops, taxi ranks, stations</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">駅</td><td>Eki</td><td>Station</td><td>Signs, maps, announcements</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">地下鉄</td><td>Chikatetsu</td><td>Subway / metro</td><td>Maps, underground signs</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">新幹線</td><td>Shinkansen</td><td>Bullet train</td><td>Station signs, tickets</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">普通</td><td>Futsuu</td><td>Local train (stops at all stations)</td><td>Train boards, platform screens</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">急行</td><td>Kyuukou</td><td>Express train (limited stops)</td><td>Train boards, platform screens</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">特急</td><td>Tokkyuu</td><td>Limited express (fewest stops)</td><td>Train boards — may need extra ticket</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">切符</td><td>Kippu</td><td>Ticket</td><td>Ticket machines, windows</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">案内</td><td>Annai</td><td>Information / guidance</td><td>Information counters, maps</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">東 西 南 北</td><td>Higashi / Nishi / Minami / Kita</td><td>East / West / South / North</td><td>Station exits (e.g. 東口 = East Exit)</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">〜口</td><td>~ guchi</td><td>~ gate / exit (e.g. 東口 East Exit)</td><td>All major stations</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">お手洗い</td><td>Otearai</td><td>Restroom / toilet</td><td>Public areas, stations, malls</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">バス</td><td>Basu</td><td>Bus</td><td>Bus stops, route boards</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">タクシー</td><td>Takushii</td><td>Taxi</td><td>Taxi ranks, apps</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">空港</td><td>Kuukou</td><td>Airport</td><td>Signs on highways, trains</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">道</td><td>Michi / Dou</td><td>Road / path / way</td><td>Street maps, directions</td></tr>
+  </table>
+</div>
+
+<!-- Prohibition & Warning Signs -->
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🚫 Prohibition & Warning Kanji</h3>
+  <div class="info-box box-warn" style="margin-bottom:10px;"><span class="icon">⚠️</span><div>These appear on signs without English. Recognising them prevents fines, embarrassment, or safety incidents.</div></div>
+  <table class="sched-table">
+    <tr><th>Kanji / Sign</th><th>Reading</th><th>Meaning</th><th>Where you'll see it</th></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;color:#c0392b;">禁止</td><td>Kinshi</td><td>Prohibited / Forbidden</td><td>Parks, temples, trains — always obey</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;color:#c0392b;">立入禁止</td><td>Tachiiri kinshi</td><td>No entry / Do not enter</td><td>Restricted areas, construction zones</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;color:#c0392b;">撮影禁止</td><td>Satsuei kinshi</td><td>No photography</td><td>Temples, museums — Gion area especially</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;color:#c0392b;">飲食禁止</td><td>Inshoku kinshi</td><td>No eating or drinking</td><td>Trains, some parks, shrines</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;color:#c0392b;">禁煙</td><td>Kin'en</td><td>No smoking</td><td>Trains, restaurants, most public spaces</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;color:#b05a00;">注意</td><td>Chuui</td><td>Caution / Warning</td><td>Wet floors, construction, stairs</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;color:#b05a00;">危険</td><td>Kiken</td><td>Danger</td><td>Construction sites, high-voltage areas</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;color:#b05a00;">非常口</td><td>Hijou guchi</td><td>Emergency exit</td><td>All buildings — green running figure sign</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;color:#b05a00;">避難場所</td><td>Hinan basho</td><td>Evacuation area / Shelter</td><td>Street signs, park noticeboards</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;color:#b05a00;">地震</td><td>Jishin</td><td>Earthquake</td><td>Emergency broadcasts, warning signs</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;color:#b05a00;">津波</td><td>Tsunami</td><td>Tsunami</td><td>Coastal warning signs</td></tr>
+  </table>
+</div>
+
+<!-- Facility & Service Signs -->
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🏪 Facility & Service Signs</h3>
+  <table class="sched-table">
+    <tr><th>Kanji / Sign</th><th>Reading</th><th>Meaning</th><th>Where you'll see it</th></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">営業中</td><td>Eigyou chuu</td><td>Open / Currently in business</td><td>Restaurant & shop doors</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">閉店</td><td>Heiten</td><td>Closed</td><td>Restaurant & shop doors</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">定休日</td><td>Teikyuubi</td><td>Regular closing day</td><td>Shop/restaurant signs</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">満員</td><td>Man'in</td><td>Full / No vacancy</td><td>Restaurants, car parks, trains</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">空き</td><td>Aki</td><td>Available / Vacancy</td><td>Car parks, seating, toilets</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">使用中</td><td>Shiyou chuu</td><td>In use / Occupied</td><td>Toilet cubicles, fitting rooms</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">現金のみ</td><td>Genkin nomi</td><td>Cash only</td><td>Small restaurants, vending machines</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">両替</td><td>Ryougae</td><td>Currency exchange</td><td>Banks, airports, some hotels</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">ATM</td><td>ATM (same)</td><td>ATM — 7-Eleven ATMs accept foreign cards</td><td>Konbini (7-Eleven), Japan Post</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">病院</td><td>Byouin</td><td>Hospital</td><td>Street signs, maps</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">警察</td><td>Keisatsu</td><td>Police</td><td>Police boxes (koban) everywhere</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">交番</td><td>Koban</td><td>Police box / local police post</td><td>Street corners — safe to approach for help</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">郵便局</td><td>Yuubinkyoku</td><td>Post office</td><td>Has reliable international ATMs</td></tr>
+    <tr><td style="font-size:1.4rem;font-weight:700;">コンビニ</td><td>Konbini</td><td>Convenience store</td><td>7-Eleven, FamilyMart, Lawson</td></tr>
+  </table>
+</div>
+
+<!-- Menu / Food Kanji -->
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🍱 Menu & Food Kanji at a Glance</h3>
+  <div class="info-box box-warn" style="margin-bottom:10px;"><span class="icon">⚠️</span><div>Many menus are Japanese-only outside tourist areas. Recognising these helps you order safely and avoid unwanted ingredients.</div></div>
+  <table class="sched-table">
+    <tr><th>Kanji / Sign</th><th>Reading</th><th>Meaning</th></tr>
+    <tr><td style="font-size:1.3rem;">定食</td><td>Teishoku</td><td>Set meal (rice + soup + main + sides)</td></tr>
+    <tr><td style="font-size:1.3rem;">ラーメン</td><td>Raamen</td><td>Ramen (noodle soup)</td></tr>
+    <tr><td style="font-size:1.3rem;">そば</td><td>Soba</td><td>Buckwheat noodles (note: contains wheat allergy risk)</td></tr>
+    <tr><td style="font-size:1.3rem;">うどん</td><td>Udon</td><td>Thick wheat noodles</td></tr>
+    <tr><td style="font-size:1.3rem;">寿司</td><td>Sushi</td><td>Sushi</td></tr>
+    <tr><td style="font-size:1.3rem;">焼肉</td><td>Yakiniku</td><td>Grilled meat (BBQ)</td></tr>
+    <tr><td style="font-size:1.3rem;">豚肉</td><td>Butaniku</td><td>Pork</td></tr>
+    <tr><td style="font-size:1.3rem;">牛肉</td><td>Gyuuniku</td><td>Beef</td></tr>
+    <tr><td style="font-size:1.3rem;">鶏肉</td><td>Toriniku</td><td>Chicken</td></tr>
+    <tr><td style="font-size:1.3rem;">魚</td><td>Sakana</td><td>Fish</td></tr>
+    <tr><td style="font-size:1.3rem;">海老</td><td>Ebi</td><td>Shrimp / prawn</td></tr>
+    <tr><td style="font-size:1.3rem;">卵 / 玉子</td><td>Tamago</td><td>Egg</td></tr>
+    <tr><td style="font-size:1.3rem;">乳製品</td><td>Nyuuseihin</td><td>Dairy products</td></tr>
+    <tr><td style="font-size:1.3rem;">だし</td><td>Dashi</td><td>Stock (often fish-based — hidden in many dishes)</td></tr>
+    <tr><td style="font-size:1.3rem;">アレルギー</td><td>Arerugii</td><td>Allergy (look for on menus)</td></tr>
+    <tr><td style="font-size:1.3rem;">辛い</td><td>Karai</td><td>Spicy</td></tr>
+    <tr><td style="font-size:1.3rem;">甘い</td><td>Amai</td><td>Sweet</td></tr>
+    <tr><td style="font-size:1.3rem;">大盛り</td><td>Oomori</td><td>Large portion</td></tr>
+    <tr><td style="font-size:1.3rem;">お通し</td><td>Otoshi</td><td>Mandatory table snack charge at izakayas (not free)</td></tr>
+  </table>
+</div>
+
+</div><!-- /signs -->
+
+<!-- ══════════════════════════════════════════════════════
+     TAB: NUMBERS
+══════════════════════════════════════════════════════ -->
+<div id="langtab-numbers" class="lang-tab-content" style="display:none;">
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🔢 Numbers 1–10 000</h3>
+  <div class="info-box box-info" style="margin-bottom:10px;"><span class="icon">💡</span><div>Japanese uses Arabic numerals (1, 2, 3…) on most price tags and displays — you won't need to read kanji numbers often. But knowing the words helps at markets and announcements.</div></div>
+  <table class="sched-table">
+    <tr><th>Number</th><th>Japanese</th><th>Romaji</th></tr>
+    <tr><td>1</td><td>一</td><td>Ichi</td></tr>
+    <tr><td>2</td><td>二</td><td>Ni</td></tr>
+    <tr><td>3</td><td>三</td><td>San</td></tr>
+    <tr><td>4</td><td>四</td><td>Yon / Shi</td></tr>
+    <tr><td>5</td><td>五</td><td>Go</td></tr>
+    <tr><td>6</td><td>六</td><td>Roku</td></tr>
+    <tr><td>7</td><td>七</td><td>Nana / Shichi</td></tr>
+    <tr><td>8</td><td>八</td><td>Hachi</td></tr>
+    <tr><td>9</td><td>九</td><td>Kyuu / Ku</td></tr>
+    <tr><td>10</td><td>十</td><td>Juu</td></tr>
+    <tr><td>100</td><td>百</td><td>Hyaku</td></tr>
+    <tr><td>1 000</td><td>千</td><td>Sen</td></tr>
+    <tr><td>10 000</td><td>万</td><td>Man</td></tr>
+  </table>
+</div>
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🕐 Time & Days</h3>
+  <table class="sched-table">
+    <tr><th>Japanese</th><th>Romaji</th><th>Meaning</th></tr>
+    <tr><td>何時ですか？</td><td>Nanji desu ka?</td><td>What time is it?</td></tr>
+    <tr><td>〜時</td><td>~ ji</td><td>~ o'clock (e.g. 9時 = 9 o'clock)</td></tr>
+    <tr><td>〜分</td><td>~ fun / pun</td><td>~ minutes</td></tr>
+    <tr><td>午前 / 午後</td><td>Gozen / Gogo</td><td>AM / PM</td></tr>
+    <tr><td>月曜日</td><td>Getsuyoubi</td><td>Monday</td></tr>
+    <tr><td>火曜日</td><td>Kayoubi</td><td>Tuesday</td></tr>
+    <tr><td>水曜日</td><td>Suiyoubi</td><td>Wednesday</td></tr>
+    <tr><td>木曜日</td><td>Mokuyoubi</td><td>Thursday</td></tr>
+    <tr><td>金曜日</td><td>Kin'youbi</td><td>Friday</td></tr>
+    <tr><td>土曜日</td><td>Doyoubi</td><td>Saturday</td></tr>
+    <tr><td>日曜日</td><td>Nichiyoubi</td><td>Sunday</td></tr>
+    <tr><td>今日</td><td>Kyou</td><td>Today</td></tr>
+    <tr><td>明日</td><td>Ashita</td><td>Tomorrow</td></tr>
+    <tr><td>昨日</td><td>Kinou</td><td>Yesterday</td></tr>
+  </table>
+</div>
+</div><!-- /numbers -->
+
+<!-- ══════════════════════════════════════════════════════
+     TAB: CULTURAL WORDS
+══════════════════════════════════════════════════════ -->
+<div id="langtab-cultural" class="lang-tab-content" style="display:none;">
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">🎌 Cultural Words Worth Knowing</h3>
+  <div class="info-box box-info" style="margin-bottom:10px;"><span class="icon">🌸</span><div>These words reflect Japanese values and context. Recognising them deepens the experience and helps you interpret what's happening around you.</div></div>
+  <table class="sched-table">
+    <tr><th>Word</th><th>Romaji</th><th>Meaning & Context</th></tr>
+    <tr><td style="font-size:1.2rem;">おもてなし</td><td>Omotenashi</td><td>Japanese hospitality — selfless, anticipatory service. Explains why service in Japan feels different.</td></tr>
+    <tr><td style="font-size:1.2rem;">わびさび</td><td>Wabi-sabi</td><td>Beauty in imperfection and transience — seen in temples, gardens, ceramics.</td></tr>
+    <tr><td style="font-size:1.2rem;">侘び寂び</td><td>Wabi-sabi (written)</td><td>Same as above — written form on signs or plaques.</td></tr>
+    <tr><td style="font-size:1.2rem;">木漏れ日</td><td>Komorebi</td><td>Sunlight filtering through leaves — a uniquely Japanese word for a visual experience in forests and shrines.</td></tr>
+    <tr><td style="font-size:1.2rem;">間</td><td>Ma</td><td>Negative space / pause — appreciated in architecture, music, and conversation.</td></tr>
+    <tr><td style="font-size:1.2rem;">頑張って</td><td>Ganbatte</td><td>Do your best / Keep going — a common encouraging phrase.</td></tr>
+    <tr><td style="font-size:1.2rem;">いってきます</td><td>Ittekimasu</td><td>I'm leaving (said when departing home — you may hear this at guesthouses)</td></tr>
+    <tr><td style="font-size:1.2rem;">いってらっしゃい</td><td>Itterasshai</td><td>Take care / See you later (response to ittekimasu)</td></tr>
+    <tr><td style="font-size:1.2rem;">ただいま</td><td>Tadaima</td><td>I'm home / I'm back (said returning to hotel/ryokan)</td></tr>
+    <tr><td style="font-size:1.2rem;">おかえり</td><td>Okaeri</td><td>Welcome back (response)</td></tr>
+    <tr><td style="font-size:1.2rem;">お邪魔します</td><td>Ojama shimasu</td><td>Excuse me for intruding — said when entering someone's home or a traditional space</td></tr>
+    <tr><td style="font-size:1.2rem;">一期一会</td><td>Ichi-go ichi-e</td><td>"Once in a lifetime meeting" — treasure every encounter</td></tr>
+    <tr><td style="font-size:1.2rem;">空気を読む</td><td>Kuuki o yomu</td><td>"Read the air" — understand unspoken social cues. Quietness in public = expectation for you too.</td></tr>
+    <tr><td style="font-size:1.2rem;">旅館</td><td>Ryokan</td><td>Traditional Japanese inn (where you may stay — follow house etiquette carefully)</td></tr>
+    <tr><td style="font-size:1.2rem;">温泉</td><td>Onsen</td><td>Hot spring bath — tattoos prohibited in most; full nudity required; wash thoroughly before entering</td></tr>
+    <tr><td style="font-size:1.2rem;">神社</td><td>Jinja</td><td>Shinto shrine</td></tr>
+    <tr><td style="font-size:1.2rem;">寺</td><td>Tera / Ji</td><td>Buddhist temple</td></tr>
+    <tr><td style="font-size:1.2rem;">お守り</td><td>Omamori</td><td>Good luck charm sold at shrines and temples</td></tr>
+    <tr><td style="font-size:1.2rem;">祭り</td><td>Matsuri</td><td>Festival</td></tr>
+    <tr><td style="font-size:1.2rem;">花火</td><td>Hanabi</td><td>Fireworks (literally "flower fire") — a quintessential summer experience in Japan</td></tr>
+  </table>
+</div>
+
+<div class="card" style="margin-bottom:12px;">
+  <h3 style="margin-bottom:10px;">✍️ Japanese Writing Systems — Quick Primer</h3>
+  <div class="info-box box-info" style="margin-bottom:10px;"><span class="icon">📖</span><div>You do not need to learn all three scripts for travel. Focus on recognising key kanji (listed in Signs tab) and understanding that katakana is used for foreign words — so foreign brand names and loanwords will feel readable.</div></div>
+  <table class="sched-table">
+    <tr><th>Script</th><th>Characters</th><th>Used for</th><th>Example</th></tr>
+    <tr><td><strong>Hiragana</strong></td><td>46 phonetic</td><td>Japanese grammar, particles, native words</td><td>こんにちは (Konnichiwa)</td></tr>
+    <tr><td><strong>Katakana</strong></td><td>46 phonetic</td><td>Foreign/loan words, brand names, menus</td><td>コーヒー (Koohii = Coffee)</td></tr>
+    <tr><td><strong>Kanji</strong></td><td>2000+ logographs</td><td>Nouns, verbs, signs, place names</td><td>東京 (Tōkyō = Tokyo)</td></tr>
+  </table>
+  <div style="margin-top:10px;padding:10px;background:var(--tag-bg);border-radius:8px;border:1px solid var(--tag-br);">
+    <strong>Useful tip:</strong> Foreign words written in katakana often sound like their English equivalents — e.g. <strong>バス</strong> = basu = bus, <strong>ホテル</strong> = hoteru = hotel, <strong>コンビニ</strong> = konbini = convenience store. Sound them out syllable by syllable.
+  </div>
+</div>
+</div><!-- /cultural -->
+
+</div><!-- end panel-language -->
+
 </div><!-- end section-viewport -->
 <!-- MOBILE BOTTOM PREV/NEXT BAR -->
 <div class="mobile-bottom-nav" id="mobileBottomNav">
 <button class="mnav-btn" id="mnavPrev" onclick="prevSection()">‹ Prev</button>
-<span class="mnav-indicator" id="mnavIndicator">Section 1 of 20</span>
+<span class="mnav-indicator" id="mnavIndicator">Section 1 of 21</span>
 <button class="mnav-btn" id="mnavNext" onclick="nextSection()">Next ›</button>
 </div>
 </div><!-- end main-area -->
@@ -2898,7 +3312,7 @@
     'must-dos','before-departure',
     'day1','day2','day3','day4','day5','day6','day7','day8','day9','day10',
     'priority-tiers','contingency','trip-rules','shopping','energy',
-    'transport','food-guide','etiquette','tickets','photos','emergency'
+    'transport','food-guide','etiquette','tickets','photos','emergency','language'
   ];
   let currentSection = 'must-dos';
   const totalSections = navOrder.length;
@@ -3061,6 +3475,20 @@
   // Set first nav item active
   document.querySelector('.sidebar-nav a[href="#must-dos"]').classList.add('active');
   updateProgress();
+
+  // Language tab switcher
+  function switchLangTab(tabId, btn) {
+    document.querySelectorAll('#panel-language .lang-tab-content').forEach(function(el) {
+      el.style.display = 'none';
+    });
+    document.querySelectorAll('#panel-language .lang-tab').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    var target = document.getElementById('langtab-' + tabId);
+    if (target) target.style.display = 'block';
+    if (btn) btn.classList.add('active');
+  }
+
 </script>
 </body>
 </html>
