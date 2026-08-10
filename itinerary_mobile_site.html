@@ -159,6 +159,11 @@
     background: #120e28; border-color: #3828a0; color: #a898e8;
   }
   body.dark-mode .shimo-card h4 { color: #9080e0; }
+  body.dark-mode .clothing-box {
+    background: #0e2622; border-color: #1a5a4e; color: #9adfd0;
+  }
+  body.dark-mode .clothing-box .clothing-header { color: #6adfc8; }
+  body.dark-mode .clothing-box .clothing-temp { background: #123830; color: #7ae0c8; border-color: #1a5a4e; }
 
   /* Decision / info boxes */
   body.dark-mode .decision-box {
@@ -722,6 +727,45 @@
     gap: 7px;
   }
 
+  /* ── WHAT TO WEAR ── */
+  .clothing-box {
+    background: #f0fbf9;
+    border: 1px solid #a0d8cc;
+    border-left: 5px solid #0f8a76;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: .85rem;
+  }
+  .clothing-header {
+    font-size: .9rem;
+    font-weight: 800;
+    color: #0a5a4c;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .clothing-temp {
+    display: inline-block;
+    background: #dcf3ee;
+    color: #0a5a4c;
+    border: 1px solid #a0d8cc;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: .76rem;
+    font-weight: 700;
+    margin-left: auto;
+  }
+  .clothing-box ul.dot-list { margin-top: 2px; margin-bottom: 0; }
+  .clothing-box ul.dot-list li { margin-bottom: 4px; }
+  .clothing-note {
+    margin-top: 6px;
+    font-size: .78rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
   /* ── ETIQUETTE PANEL ── */
   .etiquette-grid {
     display: grid;
@@ -1278,6 +1322,15 @@
 </div>
 <div class="day-body">
 <div class="info-box box-red"><span class="icon">🎯</span><div><strong>Goal:</strong> Travel cleanly, preserve energy. This is NOT a sightseeing day.</div></div>
+<div class="clothing-box">
+<div class="clothing-header">🧥 What to Wear <span class="clothing-temp">Bengaluru ~27°C → Tokyo ~10°C on landing</span></div>
+<ul class="dot-list">
+<li>Full-sleeve tee/shirt + a light zip hoodie or overshirt on top — cabin AC runs cold for a 9-hour flight</li>
+<li>Full-length trousers (jeans/joggers), not shorts — comfier for the long sit and smoother at immigration</li>
+<li>Closed shoes, not sandals/chappals — decent walking distance through Bengaluru and Haneda airports</li>
+</ul>
+<div class="clothing-note">Keep one warm layer in your cabin bag, not checked-in — Haneda is ~10°C at 6:30 AM landing and you'll feel it immediately at the aerobridge.</div>
+</div>
 <h3>Afternoon / Evening in Bengaluru</h3>
 <ul class="dot-list">
 <li>Reach airport at least <strong>3 hours before departure</strong></li>
@@ -1311,6 +1364,15 @@
 </div>
 <div class="day-body">
 <div class="info-box box-red"><span class="icon">🎯</span><div><strong>Goal:</strong> Arrive safely, settle in, short Gion walk, sleep early.</div></div>
+<div class="clothing-box">
+<div class="clothing-header">🧥 What to Wear <span class="clothing-temp">Kyoto ~15°C / 8°C</span></div>
+<ul class="dot-list">
+<li>Full-sleeve shirt or light sweater, plus a jacket for the evening — Gion cools fast once the sun sets around 17:00</li>
+<li>Jeans/chinos are fine — no thermals needed yet</li>
+<li>Comfortable, already-broken-in walking shoes — Gion's stone lanes plus a full day on your feet after the flight</li>
+</ul>
+<div class="clothing-note">If you didn't pack winter layers from home, Uniqlo (everywhere in Japan) sells cheap HEATTECH thermals — worth grabbing today ahead of the colder Kamakura and Fuji days.</div>
+</div>
 <h3>🌅 Morning – Haneda Arrival</h3>
 <table class="sched-table">
 <tr><th>Time</th><th>Plan</th></tr>
@@ -1468,6 +1530,15 @@
 </div>
 <div class="day-body">
 <div class="info-box box-red"><span class="icon">🎯</span><div><strong>Best Kyoto cultural/photo day.</strong> Keep it beautiful, not rushed.</div></div>
+<div class="clothing-box">
+<div class="clothing-header">🧥 What to Wear <span class="clothing-temp">Kyoto ~15°C / 7°C</span></div>
+<ul class="dot-list">
+<li>Light breathable layer under a jacket you can tie around your waist — the uphill stretch at Fushimi Inari warms you up fast despite the cool morning</li>
+<li>Sturdy closed shoes with real grip — the stone steps at Fushimi Inari and Kiyomizu-dera get uneven and slippery in patches</li>
+<li>Avoid new/stiff shoes today — you'll cover several km on foot</li>
+<li>A light scarf or stole works double duty: warmth in the morning, nice for photos at Kiyomizu-dera</li>
+</ul>
+</div>
 <h3>🌅 Morning – Fushimi Inari</h3>
 <table class="sched-table">
 <tr><th>Time</th><th>Activity</th></tr>
@@ -1650,6 +1721,14 @@
 </div>
 <div class="day-body">
 <div class="info-box box-red"><span class="icon">🎯</span><div><strong>Autumn foliage and photography day.</strong> Keep it slower than Day 3.</div></div>
+<div class="clothing-box">
+<div class="clothing-header">🧥 What to Wear <span class="clothing-temp">Kyoto ~14°C / 7°C</span></div>
+<ul class="dot-list">
+<li>Same layered logic as Day 3 — full-sleeve top + light jacket, comfortable trousers</li>
+<li>Closed shoes again — the bamboo path and temple grounds at Arashiyama get uneven and occasionally damp</li>
+<li>Carry a muffler or scarf — mornings by the river in Arashiyama feel noticeably colder than central Kyoto</li>
+</ul>
+</div>
 <h3>🌄 Morning – Arashiyama</h3>
 <table class="sched-table">
 <tr><th>Time</th><th>Activity</th></tr>
@@ -1790,6 +1869,15 @@
 </div>
 <div class="day-body">
 <div class="info-box box-red"><span class="icon">🎯</span><div><strong>Buffer / recovery day. Protect it.</strong></div></div>
+<div class="clothing-box">
+<div class="clothing-header">🧥 What to Wear <span class="clothing-temp">Kyoto ~15°C → Shinjuku ~9°C at night</span></div>
+<ul class="dot-list">
+<li>A regular daytime layer is fine for the relaxed Kyoto morning</li>
+<li>Carry a windbreaker or slightly heavier jacket for Shinjuku after dark — wind funnels between the high-rises and it feels colder than the number suggests</li>
+<li>Smart-casual works well if you step into an izakaya — a collared shirt or jacket over jeans reads fine, no formal wear needed</li>
+<li>Comfortable shoes — expect a lot of standing around Shinjuku's crowds and crossings</li>
+</ul>
+</div>
 <h3>🌄 Morning – Slow Kyoto</h3>
 <table class="sched-table">
 <tr><th>Time</th><th>Activity</th></tr>
@@ -1923,6 +2011,15 @@
 </div>
 <div class="day-body">
 <div class="info-box box-red"><span class="icon">🎯</span><div><strong>Relaxed, scenic Kamakura day.</strong> This is not a temple race — it's a story. Start in the bamboo, move through the heart of Kamakura, then follow the Enoden west toward the sea. End the day with a golden-hour crossing, a beach stroll, an early dinner at Onari Yokocho. Efficient west-to-east-then-west flow avoids backtracking.</div></div>
+<div class="clothing-box">
+<div class="clothing-header">🧥 What to Wear <span class="clothing-temp">Kamakura ~16°C / 9°C, breezy coast</span></div>
+<ul class="dot-list">
+<li>A windbreaker or wind-resistant jacket is more useful than a heavy one — Shichirigahama's coastline gets breezy even on a sunny day</li>
+<li>Full-sleeve top underneath, layered — you'll warm up walking between temples and cool down at the beach</li>
+<li>Closed shoes you don't mind getting a little sandy near the shoreline</li>
+<li>Sunglasses — the sea glare off Shichirigahama is stronger than you'd expect for late November</li>
+</ul>
+</div>
 
 
 
@@ -2139,6 +2236,16 @@
 </div>
 <div class="day-body">
 <div class="info-box box-warn"><span class="icon">🌤</span><div><strong>Weather Rule:</strong> Check Fuji visibility 3 days before, night before, and morning of trip. If cloudy/rainy, consider swapping with Tokyo shopping / Asakusa.</div></div>
+<div class="clothing-box">
+<div class="clothing-header">🧥 What to Wear <span class="clothing-temp">Kawaguchiko ~12°C / 1–2°C — coldest day of the trip</span></div>
+<ul class="dot-list">
+<li>Dress like it's actually cold: a thermal/HEATTECH base layer, a sweater, and an insulated or padded jacket on top</li>
+<li>A beanie/cap and a pair of gloves genuinely help early morning at Chureito Pagoda and by the lake — not overkill for this one day</li>
+<li>A muffler or scarf around the neck — wind off Lake Kawaguchiko cuts through light jackets quickly</li>
+<li>Thick socks and closed shoes with grip — Chureito Pagoda is a stair climb, and paths can be uneven</li>
+</ul>
+<div class="clothing-note">Coming from Bengaluru, this temperature is easy to underestimate — it's colder than most South Indian winters get. Wear your warmest layer, or pick up a HEATTECH set + a light down jacket from Uniqlo before this day if you don't already own one.</div>
+</div>
 <table class="sched-table">
 <tr><th>Time</th><th>Activity</th></tr>
 <tr><td>05:15</td><td>Wake up</td></tr>
@@ -2275,6 +2382,14 @@
 </div>
 <div class="day-body">
 <div class="info-box box-red"><span class="icon">🎟</span><div><strong>Book in advance.</strong> Recommended entry slot: 09:30–10:30. Give yourself 5–6 hours inside.</div></div>
+<div class="clothing-box">
+<div class="clothing-header">🧥 What to Wear <span class="clothing-temp">Tokyo ~16°C / 9°C</span></div>
+<ul class="dot-list">
+<li>The Studio Tour is indoor and kept comfortably warm — a lighter layer works well inside, with a jacket for getting there and back</li>
+<li>Carry the jacket with you rather than leaving it at the hotel — you'll want it for Shibuya crossing and Shimokitazawa after dark, when it drops noticeably</li>
+<li>Comfortable shoes are essential — the Studio Tour alone involves several hours of standing and walking indoors</li>
+</ul>
+</div>
 <table class="sched-table">
 <tr><th>Time</th><th>Activity</th></tr>
 <tr><td>07:00</td><td>Wake up</td></tr>
@@ -2448,6 +2563,15 @@
 </div>
 <div class="day-body">
 <div class="info-box box-red"><span class="icon">🎯</span><div><strong>Final full day. Keep logistics clean.</strong></div></div>
+<div class="clothing-box">
+<div class="clothing-header">🧥 What to Wear <span class="clothing-temp">Tokyo ~16°C / 9°C</span></div>
+<ul class="dot-list">
+<li><strong>teamLab Planets involves wading barefoot through ankle-to-knee-deep water</strong> — wear something you don't mind rolling up or getting wet</li>
+<li>Skip long skirts/dresses and light-coloured bottoms (they show water marks) — knee-length or roll-up trousers/shorts work best</li>
+<li>You'll need to remove shoes and socks before entering — carry a small hand towel and a spare pair of dry socks</li>
+<li>For Hamarikyu Gardens earlier in the day, a regular layered outfit (light sweater + jacket) is fine — the water part is teamLab-specific</li>
+</ul>
+</div>
 <div class="hamarikyu-card">
 <h4>🌿 Why Hamarikyu Gardens Before teamLab?</h4>
 <p>Hamarikyu is in Shiodome — only 15 minutes by subway from Toyosu (teamLab). It opens at 09:00, giving you a perfect 45–60 min calm garden walk before the immersive chaos of teamLab. <strong>Late November is peak foliage at Hamarikyu</strong> — red maples, golden ginkgo, tidal pond reflections, and Shiodome skyline contrast.</p>
@@ -2658,6 +2782,14 @@
 <span class="badge badge-energy">Goal: Smooth Departure</span>
 </div>
 <div class="day-body">
+<div class="clothing-box">
+<div class="clothing-header">🧥 What to Wear <span class="clothing-temp">Tokyo ~10°C → Bengaluru ~28°C on arrival</span></div>
+<ul class="dot-list">
+<li>Same logic as Day 1 in reverse — wear a jacket/layer you can peel off, since you'll land into Bengaluru's warmth</li>
+<li>Full-length trousers and closed shoes for the flight and transfers</li>
+<li>Pack your warm layers deep in the check-in bag today — you won't need them again once you land</li>
+</ul>
+</div>
 <table class="sched-table">
 <tr><th>Time Before Flight</th><th>Action</th></tr>
 <tr><td>4 hours before</td><td>Wake up, shower, final packing</td></tr>
